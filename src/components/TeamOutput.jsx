@@ -6,14 +6,14 @@ const TeamOutput = (props) => {
 
     return (
 
-        <div>
+        <div className="teamIndivider">
 
             <img src={"http://localhost:4444/images/team/" + t.image } alt="Billede af teammedlem" />
 
             <div className="teametsInformationer">
                 <h6>{t.name}</h6>
-                <p>{t.role}</p>
-                <p>{t.phone}</p>
+                <p className="teamStilling">{t.role}</p>
+                <p className="teamTelefonnummer">{t.phone}</p>
             </div>
 
         </div>

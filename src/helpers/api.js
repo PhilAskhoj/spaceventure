@@ -52,6 +52,19 @@ export const getTourByID = (ID) => {
 
 }
 
+// GET "LIDT OM OS"
+export const getAbout = () => {
+    // GET http://localhost:4444/about
+
+    let response = axiosBase.get("about")
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+
 // GET TEAM
 export const getTeam = () => {
     // GET http://localhost:4444/team
@@ -126,18 +139,6 @@ export const deleteTour = (ID) => {
 
 // ---------- ABOUT ----------
 // ---------------------------
-
-// ----------- GET -----------
-export const getAbout = () => {
-    // GET http://localhost:5099/about
-
-    let response = axiosBase.get("about")
-    .then(resp => {return resp.data})
-    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
-
-    return response;
-
-}
 
 // ----------- PUT -----------
 export const updateAbout = (aboutData) => {

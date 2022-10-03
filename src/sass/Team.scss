@@ -1,7 +1,56 @@
+@import "../helpers/variables";
+
 .teamWrapper {
+    margin: 6% 10%;
+
+    h3 {
+        font-size: 2.25rem;
+        text-align: center;
+        padding: 2.5% 0;
+    }
 
     .teamContent {
         display: flex;
+        justify-content: center;
+        gap: 50px;
+        
+        .teamIndivider {
+            display: grid;
+            width: calc(100% / 4);
+            
+            img {
+                border-radius: 100%;
+                justify-self: center;
+                position: relative;
+                top: 20px;
+                border: 10px solid white;
+            }
+            
+            .teametsInformationer {
+                background-color: $paper;
+                display: flex;
+                padding: 15% 0;
+                align-items: center;
+                flex-direction: column;
+                gap: 10px;
+
+                h6 {
+                    font-size: 1.25rem;
+                }
+
+                .teamStilling {
+                    color: $turquoise;
+                }
+
+                .teamTelefonnummer {
+                    font-size: 1.4rem;
+                }
+
+
+            }
+
+        }
+
     }
 
 }

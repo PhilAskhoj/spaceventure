@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Fejl from './Fejl'
 import Loading from './Loading'
-import "../sass/Team.scss"
 
 // API-kald
-import { getTeam } from '../helpers/api'
+import { getAbout } from '../helpers/api'
 
 // Output til map
-import TeamOutput from './TeamOutput'
+import LidtOmOsOutput from './LidtOmOsOutput'
 
-const Team = () => {
+const LidtOmOs = () => {
 
-    const [team, setTeam] = useState()
+    const [about, setAbout] = useState()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
 
@@ -20,14 +19,14 @@ const Team = () => {
 
         setLoading(true)
         
-        getTeam()
+        getAbout()
           .then( (data) => {
-            setTeam(data)
+            setAbout(data)
             setError(false)
           })
           .catch( (err) => {
             setError(true)
-            setTeam(false)
+            setAbout(false)
           })
           .finally( () => {
             // uanset om der er data eller fejl stopper loading
@@ -37,9 +36,9 @@ const Team = () => {
       }, [])
 
   return (
-    <section className="teamWrapper">
+    <section className="aboutWrapper">
         
-        <h3>Vores team</h3>
+        <h3>Lidt om os</h3>
 
         {
             loading && <Loading />
@@ -50,11 +49,11 @@ const Team = () => {
         }
 
         {
-            team &&
-                <div className="teamContent">
+            about &&
+                <div className="aboutContent">
                     {
-                        team.map(t => (
-                             <TeamOutput team={t} key={t._id}  />
+                        about.map(a => (
+                             <LidtOmOsOutput about={a} key={a._id}  />
                         ))
                     }
                 </div>
@@ -64,4 +63,4 @@ const Team = () => {
   )
 }
 
-export default Team;
+export default LidtOmOs;
