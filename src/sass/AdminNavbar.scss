@@ -1,0 +1,25 @@
+.adminNavbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #999;
+    color: #FFF;
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        
+        li {
+
+            a{
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 1.25rem;
+            }
+
+        }
+
+    }
+
+}

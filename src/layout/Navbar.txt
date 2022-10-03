@@ -1,0 +1,50 @@
+import React, { useContext } from 'react'
+import { NavLink } from 'react-router-dom'
+import "../sass/Navbar.scss"
+
+// Context - til at finde ud af om der er logget ind eller ej
+import { LoginContext } from '../context/LoginContext'
+
+const Navbar = () => {
+
+  const {user, signOut} = useContext(LoginContext);
+
+  return (
+    <nav>
+
+      <ul>
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/kontakt">Kontakt</NavLink>
+        </li>
+        <li>
+          <NavLink to="/om">Om os</NavLink>
+        </li>
+
+        {
+          //Ternary expression inde i vores localscope --> Spørger "hvis der er user," så gå til /admin "ellers" så gå til /login
+          user ?
+          <>
+            <li>
+              <NavLink to="/admin">ADMIN</NavLink>
+            </li>
+            <li>
+              <button onClick={signOut}>Logud</button>
+            </li>
+          </>
+          :
+            <li>
+              <NavLink to="/login">Login</NavLink>
+            </li>
+
+        }
+
+      </ul>
+
+    </nav>
+  )
+}
+
+export default Navbar

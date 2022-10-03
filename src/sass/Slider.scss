@@ -1,0 +1,107 @@
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 835px;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    // display: none;
+    
+    img {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .prev, .next {
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* Position the "prev button" to the left */
+  .prev {
+    left: 0;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    position: absolute;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dotsContainer {
+    position: absolute;
+    text-align: center;
+    bottom: 15px;
+    right: 0;
+    left: 0;
+
+    .active {
+      background-color: #717171;
+    }
+
+    .dot:hover {
+      background-color: white;
+    }
+
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 3px;
+    width: 30px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    box-shadow: #71717196;
+  }
+  
+  
+  /* Fading animation */
+  .slidefade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes slidefade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }

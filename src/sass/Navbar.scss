@@ -1,0 +1,189 @@
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    background-color: #999;
+    color: #FFF;
+
+    // BRAND
+    .navbarBrand {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: #FFF;
+
+        grid-column: 1/2;
+        grid-row: 1/-1;
+        align-self: center;
+        justify-self: left;
+        margin-left: 1rem;
+    }
+
+    // BURGER-TOGGLE-BUTTON
+    .toggleButton {
+        display: none; // vises med flex i media!
+        position: absolute;
+        top: 0.75rem;
+        right: 1rem;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 29.5px;
+        height: 24px;
+        cursor: pointer;
+
+        .bar {
+            height: 3px;
+            width: 100%;
+            background-color: #FFF;
+            border-radius: 10px;
+
+            transition: all 1s ease;
+            transform-origin: left;
+        }
+
+        // Danner X med bars/burgeren med klik (da der igennem vores onClick kommer active på)
+        &.change .bar1 {
+            transform: rotate(45deg);
+        }
+
+        &.change .bar2 {
+            opacity: 0;
+        }
+
+        &.change .bar3 {
+            transform: rotate(-45deg);
+        }
+
+    }
+
+    // MENUEN
+    .navbarLinks {
+        grid-column: 2/3;
+        grid-row: 1/-1;
+        align-self: center;
+        justify-self: center;
+        
+        ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+    
+            li {
+                transition: padding 1s ease;
+    
+                &:hover {
+                    background-color: rgba(0,0,0,0.25);
+                }
+    
+                a {
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                    padding: 1.25rem;
+                }
+    
+            }
+    
+        }
+
+    }
+
+    form {
+        grid-column: 3/-1;
+        grid-row: 1/-1;
+        align-self: center;
+        justify-self: right;
+        margin-right: 1rem;
+
+        input, button {
+            padding: 5px 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+
+        input {
+            margin: 0 5px 0 12.5px;
+            text-align: left;
+
+        }
+
+        button {
+            background-color: lightgrey;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darkgrey;
+                color: white;
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .navbar {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        
+        // BRAND
+        .navbarBrand {
+            font-size: 1.5rem;
+            align-self: center;
+            justify-items: left;
+            margin: 10px 0 0 0;
+        }
+        
+        // Vis burger
+        .toggleButton {
+            display: flex;
+            margin-top: 54px;
+        }
+        
+        // Menuen (div'en udenom ul)
+        .navbarLinks {
+            height: 0;
+            width: 100%;
+            overflow: hidden;
+            transition: height 1s ease;
+            margin-top: 10px;
+            
+            &.active {
+                height: 150px;
+            }
+            
+            ul {
+                width: 100%;
+                flex-direction: column;
+                
+                li {
+                    text-align: center;
+                    
+                    &:hover {
+                        padding-left: 1.3rem;
+                    }
+                    
+                    a { 
+                        padding: 0.5rem 1rem
+                    }
+                    
+                }
+                
+            }
+            
+        }
+
+        form {
+            justify-content: center;
+            margin: 15px 0;
+        }
+        
+    }
+    
+}
