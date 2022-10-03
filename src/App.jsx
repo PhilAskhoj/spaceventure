@@ -7,12 +7,16 @@ import AdminHome from './pages/admin/AdminHome';
 import AdminTours from './pages/admin/AdminTours';
 import AdminToursCreate from './pages/admin/AdminToursCreate';
 import AdminToursEdit from './pages/admin/AdminToursEdit';
+import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import Kontakt from './pages/Kontakt';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import Om from './pages/Om';
+import Rumfaergen from './pages/Rumfaergen';
 import SearchResult from './pages/SearchResult';
+import Sikkerhed from './pages/Sikkerhed';
+import Ture from './pages/Ture';
 
 function App() {
   return (
@@ -26,8 +30,11 @@ function App() {
       <Route path="/" element={ < Layout /> }>
 
         <Route index element={ < Home /> } />
+        <Route path="rumfaergen" element={ < Rumfaergen /> } />
+        <Route path="ture" element={ < Ture /> } />
+        <Route path="galleri" element={ < Gallery /> } />
+        <Route path="sikkerhed" element={ < Sikkerhed /> } />
         <Route path="kontakt" element={ < Kontakt /> } />
-        <Route path="om" element={ < Om /> } />
         <Route path="login" element={ < Login /> } />
         <Route path="*" element={ < NoMatch /> } />
 

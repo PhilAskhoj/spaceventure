@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header>
+    <header className="headerWrapper">
       {/* SPAVE VENTURE - logo med link til forsiden "/" */ }
       <Link className="navbarBrand" to="/">
         <figure>
@@ -12,7 +12,7 @@ const Header = () => {
         </figure>
       </Link>
 
-      <Navbar />
+      <Navbar className="headerNavbar" />
     </header>
   )
 }

@@ -1,11 +1,12 @@
 @import "../helpers/variables";
 
 .navbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     background-color: $darkblue;
+    padding: 0 7.5% 0 7.5%;
 
     // BURGER-TOGGLE-BUTTON
     .toggleButton {
@@ -22,7 +23,7 @@
         .bar {
             height: 3px;
             width: 100%;
-            background-color: #FFF;
+            background-color: black;
             border-radius: 10px;
 
             transition: all 1s ease;
@@ -46,26 +47,23 @@
 
     // MENUEN
     .navbarLinks {
-        grid-column: 1/2;
-        grid-row: 1/-1;
-        align-self: center;
-        justify-self: center;
-
         display: flex;
+        align-items: center;
         
         ul {
             display: flex;
             margin: 0;
             padding: 0;
             list-style-type: none;
-    
+            
             li {
                 transition: padding 1s ease;
-    
-                &:hover {
-                    background-color: rgba(0,0,0,0.25);
+                
+                 .active {
+                    border-top: 5px solid $turquoise;
+                    background-color: rgba(255, 255, 255, 0.103);
                 }
-    
+                
                 a {
                     display: block;
                     color: white;
@@ -76,13 +74,14 @@
             }
     
         }
-
-        .icon {
-            grid-column: 2/-1;
-            grid-row: 1/-1;
-            color: white;
-        }
-
+  
+    }
+    
+    .icon {
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        margin-left: 15px;
     }
 
 }
@@ -95,14 +94,6 @@
         justify-content: center;
         flex-direction: column;
         align-items: flex-start;
-        
-        // BRAND
-        .navbarBrand {
-            font-size: 1.5rem;
-            align-self: center;
-            justify-items: left;
-            margin: 10px 0 0 0;
-        }
         
         // Vis burger
         .toggleButton {

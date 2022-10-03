@@ -42,36 +42,6 @@ const Home = () => {
 
   }, [])
 
-  // Modtode som modtager et tal/antal og laver det tilsvarende antal stjerner
-  const makeStars = (numberOfStars) => {
-    // Hvis react icon eller anden "child" let stars = []
-    // Hvis eksempelvis der skal vises "X" ved "stars += "X" er det ikke nødvendigt med [], men det bliver derimod bare let stars = ""
-    let stars = []
-    for (let i = 0; i < numberOfStars; i++) {
-      /* stars += "X" */
-      stars.push(<AiFillStar className="ratingStars" />)
-    }
-    
-    return stars
-
-  }
-
-  /* NEDENSTÅENDE FUNKTION SKAL TILFØJES HVIS TOURS SKAL BLIVE BLANDET. ELLERS SLET!!!! */
-
-/* 
-  // Modtager et array - altså en liste - og den shufflere/blander dette array og retunerer den nu blandede liste (array)
-  function myRandom(arr) {
-    // Loop gennem array (arry) og byt runst på pladserne - fra bund til top (bagfra)
-    for (let i = arr.length -1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i+1));
-      let k = arr[i];
-      arr[i] = arr[j];
-      arr[j] = k;
-    }
-    return arr; // Her retunerer vi det shufflede array
-  }
-*/
-
   return (
     <div id="allToursWrapper">
       <h1>Home</h1>

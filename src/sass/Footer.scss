@@ -1,7 +1,9 @@
+@import "../helpers/variables";
+
 footer {
-    background-color: #999;
+    background-color: $darkblue;;
     color: white;
-    height: 7.5vh;
+    height: auto;
 
     display: flex;
     justify-content: center;

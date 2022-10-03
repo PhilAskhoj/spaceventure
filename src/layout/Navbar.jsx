@@ -2,14 +2,12 @@ import React, { useContext, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import "../sass/Navbar.scss"
 
-
-
-// Context - til at finde ud af om der er logget ind eller ej
 import { LoginContext } from '../context/LoginContext'
-import { AiFillFacebook, AiFillTwitterSquare, AiOutlineFacebook, AiOutlineGooglePlus, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
+import { FaFacebookF, FaGooglePlusG, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Navbar = () => {
-
+  
+  // Context - til at finde ud af om der er logget ind eller ej
   const {user, signOut} = useContext(LoginContext);
 
   // State til om der er klikket på burger (true/false)
@@ -53,8 +51,11 @@ const Navbar = () => {
       <div className={showBurgermenu ? "navbarLinks active" : "navbarLinks"}> {/* TERNARY EXPRESSION. DER SPØRGES OM HVIS SHOWBURGERMENU (STATE SOM OGSÅ BRUGES I FORBINDELSE MED ONCLICK PÅ BURGERMENUEN (TOGGLEBUTTON)) ER TRUE, SKAL DEN VISES MED CLASSEN NAVBARLINKS OG ACTIVE, ELLERS SKAL DER BLOT VISES NAVBARLINKS UDEN ACTIVE */}
         <ul>
           <li><NavLink to="/" >Hjem</NavLink></li>
+          <li><NavLink to="/rumfaergen" >Rumfærgen</NavLink></li>
+          <li><NavLink to="/ture" >Ture</NavLink></li>
+          <li><NavLink to="/galleri" >Galleri</NavLink></li>
+          <li><NavLink to="/sikkerhed" >Sikkerhed</NavLink></li>
           <li><NavLink to="/kontakt" >Kontakt</NavLink></li>
-          <li><NavLink to="/om" >Om</NavLink></li>
           {
             //Ternary expression inde i vores localscope --> Spørger "hvis der er user," så gå til /admin "ellers" så gå til /login
             user ?
@@ -64,15 +65,14 @@ const Navbar = () => {
           }
         </ul>
 
-        <div>
-
-        <AiOutlineFacebook className="icon" />
-        <AiOutlineTwitter className="icon" />
-        <AiOutlineGooglePlus className="icon" />
-        <AiOutlineInstagram className="icon" />
-        </div>
-
       </div>
+
+        <div>
+          <a href="https://www.facebook.com" target="_blank"><FaFacebookF className="icon" /></a>
+          <a href="https://www.twitter.com" target="_blank"><FaTwitter className="icon" /></a>
+          <a href="https://www.googleplus.com" target="_blank"><FaGooglePlusG className="icon" /></a>
+          <a href="https://www.instagram.com" target="_blank"><FaInstagram className="icon" /></a>
+        </div>
 
     </nav >    
 

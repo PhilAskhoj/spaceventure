@@ -4,10 +4,6 @@ const axiosBase = axios.create({
     baseURL: 'http://localhost:4444/'
 });
 
-// ---------- TOURS ----------
-// ---------------------------
-
-// ----------- GET -----------
 // GET ALL TOURS
 export const getTours = () => {
     // GET http://localhost:5099/tours
@@ -49,6 +45,18 @@ export const getTourByID = (ID) => {
     // GET http://localhost:5099/tours/625c787debadcefe8ed39ac9
 
     let response = axiosBase.get("tours/" + ID)
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+// GET ALL TOURS
+export const getFooter = () => {
+    // GET http://localhost:4444/footer
+
+    let response = axiosBase.get("footer")
     .then(resp => {return resp.data})
     .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
 
