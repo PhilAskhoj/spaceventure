@@ -1,11 +1,68 @@
 @import "../helpers/variables";
 
 footer {
-    background-color: $darkblue;;
-    color: white;
-    height: auto;
+    
+    .footerKontaktLinks {
+        padding: 3.5% 10%;
+        display: flex;
+        justify-content: space-between;
+        background-color: $darkblue;;
+        color: white;
+        
+        .footerKontakt {
+            display: flex;
+            padding: 7.5% 0;
+            gap: 20px;
+            font-size: 1rem;
+            
+            .footerKontaktIcon {
+                color: $turquoise;
+            }
+            
+        }
+        
+        h4 {
+            padding-bottom: 7.5%;
+        }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 15px 125px;
+            
+            li {
+  
+                color: $turquoise;
+                
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+
+            }
+
+        }
+
+        button {
+            background-color: $turquoise;
+            border: none;
+            padding: 20px 35px;
+           
+            .buttonTekst {
+                color: white;
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
+    .footerCopyIcons {
+        display: flex;
+        background-color: $darkestblue;
+        color: $darkgrey;
+        padding: 2% 7.5%;
+    }
+
 }

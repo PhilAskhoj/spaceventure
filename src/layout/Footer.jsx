@@ -44,22 +44,22 @@ const Footer = () => {
   return (
     <footer>
       
-      <div>
+      <div className="footerKontaktLinks">
                 {
-                    footer &&
+                  footer &&
                     <div>
                       <h4>KONTAKT</h4>
 
                         {
                             <div key={footer._id}>
-                                <p>
-                                <BsTelephoneFill />  {footer.phone}
+                                <p className="footerKontakt">
+                                <BsTelephoneFill className="footerKontaktIcon" /> +45 {footer.phone}
                                 </p>
-                                <p>
-                                <FaEnvelope />  {footer.email}
+                                <p className="footerKontakt">
+                                <FaEnvelope className="footerKontaktIcon" /> {footer.email}
                                 </p>
-                                <p>
-                                <FaLocationArrow />  {footer.address}
+                                <p className="footerKontakt">
+                                <FaLocationArrow className="footerKontaktIcon" /> {footer.address}
                                 </p>
                             </div>
 
@@ -73,18 +73,16 @@ const Footer = () => {
 
                   <div>
                     <ul>
-                      <li><NavLink to="/" >Hjem</NavLink></li>
                       <li><NavLink to="/rumfaergen" >Rumfærgen</NavLink></li>
-                      <li><NavLink to="/ture" >Ture</NavLink></li>
                       <li><NavLink to="/galleri" >Galleri</NavLink></li>
+                      <li><NavLink to="/ture" >Ture</NavLink></li>
+                      <li><NavLink to="/sikkerhed" >Sikkerhed</NavLink></li>
+                      <li><a href="">Vores team</a></li>
                     </ul>
-                    <button><NavLink to="/galleri" >Kontakt</NavLink></button>
+                    <button><NavLink className="buttonTekst" to="/galleri" >Kontakt</NavLink></button>
                   </div>
 
                 </div>
-
-            </div>
-
             {
                 loading &&
                 <p>
@@ -97,7 +95,10 @@ const Footer = () => {
                 <h1>Der er dersværre opstået en fejl</h1>
             }
 
-        <div>
+      </div>
+
+
+      <div className="footerCopyIcons">
 
             <p>
               &copy; 2022 Space Venture. All rights reserved.
@@ -110,7 +111,7 @@ const Footer = () => {
               <a href="https://www.instagram.com" target="_blank"><FaInstagram className="icon" /></a>
             </div>
 
-        </div>
+      </div>
 
     </footer>
   )
