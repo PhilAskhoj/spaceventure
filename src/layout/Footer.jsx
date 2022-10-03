@@ -104,7 +104,7 @@ const Footer = () => {
               &copy; 2022 Space Venture. All rights reserved.
             </p>
 
-            <div>
+            <div className="footerSocialIcons">
               <a href="https://www.facebook.com" target="_blank"><FaFacebookF className="icon" /></a>
               <a href="https://www.twitter.com" target="_blank"><FaTwitter className="icon" /></a>
               <a href="https://www.googleplus.com" target="_blank"><FaGooglePlusG className="icon" /></a>
