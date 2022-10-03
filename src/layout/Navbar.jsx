@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import "../sass/Navbar.scss"
 
 // Context - til at finde ud af om der er logget ind eller ej
@@ -27,9 +27,6 @@ const Navbar = () => {
   return (
 
     <nav className="navbar">
-
-      {/* BRAND - Til logo */ }
-      <Link className="navbarBrand" to="/">FTATravel</Link>
 
       {/* BURGERMENU */}
 
