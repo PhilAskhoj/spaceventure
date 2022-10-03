@@ -8,7 +8,7 @@ const Header = () => {
       {/* SPAVE VENTURE - logo med link til forsiden "/" */ }
       <Link className="navbarBrand" to="/">
         <figure>
-          <img src="./billeder/logo.png" alt="Space venture logo" />
+          <img src="./img/logo.png" alt="Space venture logo" />
         </figure>
       </Link>
 

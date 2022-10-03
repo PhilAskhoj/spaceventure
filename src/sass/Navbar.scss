@@ -1,23 +1,11 @@
+@import "../helpers/variables";
+
 .navbar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     position: relative;
-    background-color: #999;
-    color: #FFF;
-
-    // BRAND
-    .navbarBrand {
-        font-size: 1.5rem;
-        text-decoration: none;
-        color: #FFF;
-
-        grid-column: 1/2;
-        grid-row: 1/-1;
-        align-self: center;
-        justify-self: left;
-        margin-left: 1rem;
-    }
+    background-color: $darkblue;
 
     // BURGER-TOGGLE-BUTTON
     .toggleButton {
@@ -58,10 +46,12 @@
 
     // MENUEN
     .navbarLinks {
-        grid-column: 2/3;
+        grid-column: 1/2;
         grid-row: 1/-1;
         align-self: center;
         justify-self: center;
+
+        display: flex;
         
         ul {
             display: flex;
@@ -87,36 +77,10 @@
     
         }
 
-    }
-
-    form {
-        grid-column: 3/-1;
-        grid-row: 1/-1;
-        align-self: center;
-        justify-self: right;
-        margin-right: 1rem;
-
-        input, button {
-            padding: 5px 10px;
-            border: 2px solid white;
-            border-radius: 5px;
-        }
-
-        input {
-            margin: 0 5px 0 12.5px;
-            text-align: left;
-
-        }
-
-        button {
-            background-color: lightgrey;
-            cursor: pointer;
-
-            &:hover {
-                background-color: darkgrey;
-                color: white;
-            }
-
+        .icon {
+            grid-column: 2/-1;
+            grid-row: 1/-1;
+            color: white;
         }
 
     }
@@ -153,7 +117,7 @@
             overflow: hidden;
             transition: height 1s ease;
             margin-top: 10px;
-            
+
             &.active {
                 height: 150px;
             }
@@ -179,10 +143,6 @@
             
         }
 
-        form {
-            justify-content: center;
-            margin: 15px 0;
-        }
         
     }
     

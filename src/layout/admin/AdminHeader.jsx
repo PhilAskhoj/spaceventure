@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { LoginContext } from '../../context/LoginContext'
-import "../../sass/AdminHeader.scss"
+import "../../sass/Header.scss"
 
 const AdminHeader = () => {
 

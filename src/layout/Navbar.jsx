@@ -2,8 +2,11 @@ import React, { useContext, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import "../sass/Navbar.scss"
 
+
+
 // Context - til at finde ud af om der er logget ind eller ej
 import { LoginContext } from '../context/LoginContext'
+import { AiFillFacebook, AiFillTwitterSquare, AiOutlineFacebook, AiOutlineGooglePlus, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
 
 const Navbar = () => {
 
@@ -61,12 +64,15 @@ const Navbar = () => {
           }
         </ul>
 
-      </div>
+        <div>
 
-        <form onSubmit={handleSearch}>
-          <input type="text" name="search"/>
-          <button type="submit">Søg</button>
-        </form>
+        <AiOutlineFacebook className="icon" />
+        <AiOutlineTwitter className="icon" />
+        <AiOutlineGooglePlus className="icon" />
+        <AiOutlineInstagram className="icon" />
+        </div>
+
+      </div>
 
     </nav >    
 
