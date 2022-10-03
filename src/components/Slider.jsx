@@ -6,9 +6,9 @@ const Slider = (props) => {
     
     const [slideIndex, setSlideIndex] = useState(0) // Første billede har index 0
 
-    // http://localhost:5099/images/tours/
+    // http://localhost:4444/images/banner/
     // Image-array (liste af billeder) fra parent
-    const sliderImages = props.tourGallery; // Hard-coded = ["f1_ (1).jpg", "f1_ (2).jpg", "f1_ (3).jpg"]
+    const sliderImages = props.tourGallery;
     // Caption-tekst fra parent
     const captiontxt = props.captiontext;
 
@@ -74,7 +74,7 @@ const Slider = (props) => {
         {
             sliderImages.map((s, i) =>
                 <div className="mySlides slidefade" key={"slide" + i}>
-                    <img src={"http://localhost:5099/images/tours/" + s} />
+                    <img src={"http://localhost:4444/images/banner/" + s} />
                     <p className="text">{"Foto " + (i + 1) + " fra " + captiontxt}</p>
                 </div>
             )
@@ -107,4 +107,4 @@ const Slider = (props) => {
 
 }
 
-export default Slider
+export default Slider;

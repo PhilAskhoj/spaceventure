@@ -52,11 +52,35 @@ export const getTourByID = (ID) => {
 
 }
 
-// GET ALL TOURS
+// GET TEAM
+export const getTeam = () => {
+    // GET http://localhost:4444/team
+
+    let response = axiosBase.get("team")
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+// GET FOOTER
 export const getFooter = () => {
     // GET http://localhost:4444/footer
 
     let response = axiosBase.get("footer")
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+// POST - TILMELDING AF NYHEDSBREV
+export const createSubscribeNewsletter = (subscribtionData) => {
+    // POST http://localhost:4444/newssubscription
+
+    let response = axiosBase.post("newssubscription", subscribtionData)
     .then(resp => {return resp.data})
     .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
 

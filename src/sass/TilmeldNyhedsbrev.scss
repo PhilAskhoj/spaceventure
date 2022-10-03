@@ -1,0 +1,66 @@
+@import "../helpers/variables";
+
+.tilmeldNyhedsbrevWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin-bottom: 5vh;
+
+    img, h3, p, form {     
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+    }
+    
+    h3, p, form {
+        justify-self: center;
+        align-self: center;
+        color: white;
+    }
+    
+    h3 {
+        padding-bottom: 10%;
+        font-size: 3rem;
+    }
+
+    p {
+        padding-bottom: 2%;
+        font-weight: 600;
+    }
+
+    form {
+        padding-top: 7.5%;
+        display: flex;
+        gap: 10px;
+
+        input {
+            background-color: rgba(255, 255, 255, 0.356);
+            border: none;
+            padding: 17.5px 150px 17.5px 25px;
+            color: white;
+            outline: none;
+            
+            &::placeholder {
+                color: white;
+                font-size: 1rem;
+            }
+            
+        }
+        
+        button {
+            background-color: $turquoise;
+            border: none;
+            padding: 17.5px 35px;
+            font-size: 1rem;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+    }
+
+    img {
+        height: 45vh;
+        width: 100%;
+    }
+
+}

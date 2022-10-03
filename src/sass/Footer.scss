@@ -1,6 +1,6 @@
 @import "../helpers/variables";
 
-footer {
+.footer {
     
     .footerKontaktLinks {
         padding: 3.5% 10%;
@@ -30,6 +30,9 @@ footer {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr;
             gap: 15px 125px;
+
+            position: relative;
+            left: 15px;
             
             li {
   

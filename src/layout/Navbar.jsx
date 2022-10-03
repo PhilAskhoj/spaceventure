@@ -68,10 +68,10 @@ const Navbar = () => {
       </div>
 
         <div>
-          <a href="https://www.facebook.com" target="_blank"><FaFacebookF className="icon" /></a>
-          <a href="https://www.twitter.com" target="_blank"><FaTwitter className="icon" /></a>
-          <a href="https://www.googleplus.com" target="_blank"><FaGooglePlusG className="icon" /></a>
-          <a href="https://www.instagram.com" target="_blank"><FaInstagram className="icon" /></a>
+          <a href="https://www.facebook.com" target="_blank"><FaFacebookF className="icon" alt="Facebook ikon" /></a>
+          <a href="https://www.twitter.com" target="_blank"><FaTwitter className="icon" alt="Twitter ikon" /></a>
+          <a href="https://www.googleplus.com" target="_blank"><FaGooglePlusG className="icon" alt="Google+ ikon" /></a>
+          <a href="https://www.instagram.com" target="_blank"><FaInstagram className="icon" alt="Instagram ikon" /></a>
         </div>
 
     </nav >    

@@ -6,4 +6,4 @@ const Fejl = (props) => {
   )
 }
 
-export default Fejl
+export default Fejl;
