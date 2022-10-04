@@ -55,6 +55,12 @@
             color: white;
             border: none;
             cursor: pointer;
+
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+
         }
 
     }
