@@ -37,7 +37,7 @@ const TilmeldNyhedsbrev = () => {
 
   return (
     <section className="tilmeldNyhedsbrevWrapper">
-        
+
         <img src="./img/newsmail-bg.jpg" alt="Øde område med ørkensand" />
         <h3>Tilmeld dig og få 25% rabat</h3>
         <p>Tilmeld dig vores nyhedsbrev og få 25% rabat på din første tur!</p>
