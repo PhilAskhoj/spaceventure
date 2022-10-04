@@ -62,17 +62,18 @@
             li {
                 transition: padding 1s ease;
                 
-                 .active {
+                .active {
                     border-top: 3.5px solid $turquoise;
                     background-color: rgba(255, 255, 255, 0.103);
                 }
-
+                
                 :hover { // Der sættes ikke &:hover, da der så desuden også ville blive tilføljet 5px solid $turquoise til ydereligere til det punkt, man allerede befinder sig på, hvis man hover netop dette
                     border-top: 3.5px solid $turquoise;
                     background-color: rgba(255, 255, 255, 0.103);
                 }
                 
                 a {
+                    border-top: 3.5px solid $darkblue; // For at dække sådan der ikke kommer et hop hver gang man hopper, og at når man står på et menupunkt, så er dens tekst ikke "længere nede" eller "længere fremme" i forhold til de resterende menupunkter
                     display: block;
                     color: white;
                     text-decoration: none;
