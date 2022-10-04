@@ -1,0 +1,66 @@
+@import "../helpers/variables";
+
+.aboutWrapper {
+    margin: 6% 10%;
+    
+    .aboutContent {
+        display: flex;
+        
+        figure {
+            width: 50%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            
+        }
+        
+        .aboutTekst {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            padding: 2.5% 5%;
+            
+            h4, h5, button {
+                padding: 6% 0;
+            }
+
+            h3 {
+                font-size: 2.25rem;
+            }
+
+            h5 {
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                color: $turquoise;
+                text-decoration-color: red;
+                font-weight: 300;
+            }
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.75rem;
+                padding-bottom: 6%;
+            }
+
+            button {
+                background-color: $turquoise;
+                border: none;
+                width: 40%;
+                padding: 25px 0;
+               
+                .buttonTekst {
+                    font-size: 1rem;
+                    color: white;
+                    text-decoration: none;
+                }
+    
+            }
+
+        }
+
+    }
+
+}

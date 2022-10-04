@@ -6,21 +6,9 @@ const axiosBase = axios.create({
 
 // GET ALL TOURS
 export const getTours = () => {
-    // GET http://localhost:5099/tours
+    // GET http://localhost:4444/banner
 
-    let response = axiosBase.get("tours")
-    .then(resp => {return resp.data})
-    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
-
-    return response;
-
-}
-
-// GET ALL (BY TEASER)
-export const getToursTeaser = () => {
-    // GET http://localhost:5099/tours/teaser
-
-    let response = axiosBase.get("tours/teaser")
+    let response = axiosBase.get("banner")
     .then(resp => {return resp.data})
     .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
 

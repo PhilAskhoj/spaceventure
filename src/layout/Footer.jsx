@@ -79,7 +79,7 @@ const Footer = () => {
                       <li><NavLink to="/sikkerhed" >Sikkerhed</NavLink></li>
                       <li><a href="">Vores team</a></li>
                     </ul>
-                    <button><NavLink className="buttonTekst" to="/galleri" >Kontakt</NavLink></button>
+                    <button><NavLink className="buttonTekst" to="/kontakt">Kontakt</NavLink></button>
                   </div>
 
                 </div>

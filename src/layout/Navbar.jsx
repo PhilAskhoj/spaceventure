@@ -50,12 +50,12 @@ const Navbar = () => {
       {/* NAV - LINKS */ }
       <div className={showBurgermenu ? "navbarLinks active" : "navbarLinks"}> {/* TERNARY EXPRESSION. DER SPØRGES OM HVIS SHOWBURGERMENU (STATE SOM OGSÅ BRUGES I FORBINDELSE MED ONCLICK PÅ BURGERMENUEN (TOGGLEBUTTON)) ER TRUE, SKAL DEN VISES MED CLASSEN NAVBARLINKS OG ACTIVE, ELLERS SKAL DER BLOT VISES NAVBARLINKS UDEN ACTIVE */}
         <ul>
-          <li><NavLink to="/" >Hjem</NavLink></li>
-          <li><NavLink to="/rumfaergen" >Rumfærgen</NavLink></li>
-          <li><NavLink to="/ture" >Ture</NavLink></li>
-          <li><NavLink to="/galleri" >Galleri</NavLink></li>
-          <li><NavLink to="/sikkerhed" >Sikkerhed</NavLink></li>
-          <li><NavLink to="/kontakt" >Kontakt</NavLink></li>
+          <li><NavLink to="/">Hjem</NavLink></li>
+          <li><NavLink to="/rumfaergen">Rumfærgen</NavLink></li>
+          <li><NavLink to="/ture">Ture</NavLink></li>
+          <li><NavLink to="/galleri">Galleri</NavLink></li>
+          <li><NavLink to="/sikkerhed">Sikkerhed</NavLink></li>
+          <li><NavLink to="/kontakt">Kontakt</NavLink></li>
           {
             //Ternary expression inde i vores localscope --> Spørger "hvis der er user," så gå til /admin "ellers" så gå til /login
             user ?

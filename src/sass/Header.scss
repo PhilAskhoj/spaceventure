@@ -10,10 +10,17 @@ header {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1050px) {
 
     header {
-        display: flex;
+        .navbarBrand {
+            figure {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2% 0% 2% 5%;
+            }
+        }
     }
     
 }

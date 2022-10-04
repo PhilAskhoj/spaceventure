@@ -1,7 +1,9 @@
 import React from 'react'
 import LidtOmOs from '../components/LidtOmOs'
+import SliderEffektSLET from '../components/SliderEffektSLET'
 import Team from '../components/Team'
 import TilmeldNyhedsbrev from '../components/TilmeldNyhedsbrev'
+import ToTureHome from '../components/ToTureHome'
 
 import "../sass/Home.scss"
 
@@ -9,7 +11,8 @@ const Home = () => {
 
   return (
     <div id="allToursWrapper">
-      <h1>Home</h1>
+      <SliderEffektSLET />
+      <ToTureHome />
       <LidtOmOs />
       <Team />
       <TilmeldNyhedsbrev />
