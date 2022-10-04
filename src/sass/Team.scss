@@ -54,3 +54,67 @@
     }
 
 }
+
+@media (max-width: 1050px) {
+
+    .teamWrapper {
+        margin: 0% 0% 7.5% 0%;
+    
+        h3 {
+            padding: 5% 0;
+        }
+    
+        .teamContent {
+            align-items: center;
+            flex-direction: column;
+            gap: 25px;
+            
+            .teamIndivider {
+                width: 50%;
+                
+                img {
+                    width: 35%;
+                    top: 50px;
+                }
+
+                .teametsInformationer {
+                    padding: 15% 0% 10% 0%;
+                }
+    
+            }
+    
+        }
+    
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .teamWrapper {
+        margin: 0% 10% 7.5% 10%;
+    
+        h3 {
+            padding: 2.5%;
+        }
+    
+        .teamContent {
+            align-items: center;
+            flex-direction: column;
+            gap: 25px;
+            
+            .teamIndivider {
+                width: 100%;
+       
+                img {
+                    width: 35%;
+                    top: 50px;
+                }
+    
+            }
+    
+        }
+    
+    }
+
+}

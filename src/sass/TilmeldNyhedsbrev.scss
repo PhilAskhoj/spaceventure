@@ -1,3 +1,4 @@
+
 @import "../helpers/variables";
 
 .tilmeldNyhedsbrevWrapper {
@@ -63,4 +64,84 @@
         width: 100%;
     }
 
+}
+
+@media (max-width: 1050px) {
+
+    .tilmeldNyhedsbrevWrapper {
+        
+        h3 {
+            padding-bottom: 15%;
+            font-size: 2rem;
+            margin: 0% 10%;
+        }
+        
+        p {
+            padding-bottom: 3%;
+            font-size: 0.9rem;
+            margin: 0% 10%;
+        }
+        
+        form {
+            margin: 0% 10%;
+            padding-top: 12.5%;
+            display: flex;
+            gap: 10px;
+
+            input {
+                
+                &::placeholder {
+                    font-size: 0.9rem;
+                }
+                
+            }
+            
+            button {
+
+                font-size: 0.9rem;
+            }
+    
+        }
+    
+        img {
+            height: 35vh;
+        }
+    
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .tilmeldNyhedsbrevWrapper {
+        width: 100vw;
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            font-size: 0.75rem;
+        }
+        
+        form {
+            padding-top: 15%;
+
+            input {
+
+                &::placeholder {
+                    font-size: 0.75rem;
+                }
+
+            }
+
+            button {
+                padding: 20px 38.5px;
+                font-size: 0.75rem;
+            }
+            
+        }
+
+    }
+    
 }

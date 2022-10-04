@@ -1,7 +1,7 @@
 @import "../helpers/variables";
 
 .aboutWrapper {
-    margin: 6% 10%;
+    margin: 2.5% 10%;
     
     .aboutContent {
         display: flex;
@@ -23,7 +23,7 @@
             width: 50%;
             padding: 2.5% 5%;
             
-            h4, h5, button {
+            h5, button {
                 padding: 6% 0;
             }
 
@@ -61,6 +61,58 @@
 
         }
 
+    }
+
+}
+
+@media (max-width: 1050px) {
+
+    .aboutWrapper {
+        text-align: center;
+
+        .aboutContent {
+            flex-direction:column-reverse;
+            align-items: center;
+
+            figure {
+                width: 65%;
+            }
+            
+            .aboutTekst {
+                width: 75%;
+                display: grid;
+                
+                button {
+                    margin-bottom: 2.5%;
+                    justify-self: center;
+
+                }
+    
+            }
+    
+        }
+    
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .aboutWrapper {
+        margin: 6% 10% 10% 10%;
+        
+        .aboutContent {
+            
+            figure {
+                width: 100%;
+            }
+            
+            .aboutTekst {
+                width: 110%;
+            }
+    
+        }
+    
     }
 
 }

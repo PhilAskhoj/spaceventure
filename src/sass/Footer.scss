@@ -101,3 +101,53 @@
     }
 
 }
+
+@media (max-width: 750px) {
+
+    .footer {
+    
+        .footerKontaktLinks {
+            flex-direction: column;
+            
+            .footerKontakt {
+                padding: 2.5% 0;              
+            }
+            
+            h4 {
+                padding: 7.5% 0%;
+            }
+    
+            ul {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            }
+    
+            button {
+                margin: 10% 0% 7.5% 0%;
+            }
+    
+        }
+    
+        .footerCopyIcons {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 5% 10%;
+            gap: 15px;
+    
+            p, .footerSocialIcons {
+                grid-column: 1/-1;
+            }
+    
+            p {
+                grid-row: 1/2;
+            }
+    
+            .footerSocialIcons {
+                grid-row: 2/-1;
+            }
+    
+        }
+    
+    }
+    
+}
