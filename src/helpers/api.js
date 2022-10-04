@@ -4,6 +4,19 @@ const axiosBase = axios.create({
     baseURL: 'http://localhost:4444/'
 });
 
+
+// GET BANNERS (SLIDER)
+export const getBannerSliderData = () => {
+    // GET http://localhost:4444/banner
+
+    let response = axiosBase.get("banner")
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
 // GET ALL TOURS
 export const getTours = () => {
     // GET http://localhost:4444/banner
@@ -76,6 +89,19 @@ export const getFooter = () => {
     return response;
 
 }
+
+// GET "RUMFÆRGE"
+export const getSpacecraft = () => {
+    // GET http://localhost:4444/spacecraft
+
+    let response = axiosBase.get("spacecraft")
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
 
 // POST - TILMELDING AF NYHEDSBREV
 export const createSubscribeNewsletter = (subscribtionData) => {

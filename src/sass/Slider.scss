@@ -1,107 +1,45 @@
-/* Slideshow container */
+@import "../helpers/variables";
+
+/* Sliderens container/wrapper */
 .slideshow-container {
     position: relative;
-    max-width: 835px;
+    width: 100vw;
     margin: auto;
   }
-  
-  /* Hide the images by default */
+
   .mySlides {
-    // display: none;
     
     img {
       width: 100%;
-      height: 50vh;
+      height: 80vh;
       object-fit: cover;
-      border-radius: 5px;
     }
 
   }
-  
-  /* Next & previous buttons */
-  .prev, .next {
-    position: absolute;
-    cursor: pointer;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
 
-  .prev, .next {
-    border-radius: 3px 0 0 3px;
-  }
-
-  /* Position the "prev button" to the left */
-  .prev {
-    left: 0;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-  
-  /* Caption text */
-  .text {
+  .squaresWrapper {
     position: absolute;
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    top: 5px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .dotsContainer {
-    position: absolute;
-    text-align: center;
-    bottom: 15px;
-    right: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    right: 10%;
+    bottom: 45%;
 
     .active {
-      background-color: #717171;
+      background-color: $turquoise;
     }
 
-    .dot:hover {
+    .squares:hover {
       background-color: white;
     }
 
   }
   
-  /* The dots/bullets/indicators */
-  .dot {
+  /* Squares/firkanter */
+  .squares {
     cursor: pointer;
-    height: 3px;
-    width: 30px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 5px;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-    box-shadow: #71717196;
-  }
-  
-  
-  /* Fading animation */
-  .slidefade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes slidefade {
-    from {opacity: .4}
-    to {opacity: 1}
+    height: 20px;
+    width: 20px;
+    background-color: rgb(190, 190, 190);
+    transition: background-color 0.6s ease; // fading af background-color på squares
   }

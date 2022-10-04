@@ -1,5 +1,7 @@
+@import "../helpers/variables";
+
 .rumfaergenWrapper {
-    
+
     .rumfaergenBannerContainer {
         display: grid;
         grid-template-columns: 1fr;
@@ -11,7 +13,7 @@
         }
 
         figure {
-            max-width: 100%;
+            max-width: 150%;
             img {
                 width: 100%;
                 height: 35vh;
@@ -26,6 +28,100 @@
             font-size: 3rem;
         }
 
+    }
+
+    .rumfaergenContentContainer {
+        margin: 6.5% 0% 3.5% 0%;
+        
+        .rumfaergeImgTekst {
+            margin: 0% 0% 5% 10%;
+            display: flex;
+            width: 100%;
+            
+            figure {
+                width: 50%;
+                height: 100%;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                
+            }
+            
+            .rumfaergeTekst {
+                margin-right: 15%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 50%;
+                padding: 0.75% 5%;
+                
+                h3 {
+                    font-size: 4.25rem;
+                    font-weight: 400;
+                    color: rgba(169, 169, 169, 0.37);
+                }
+                
+                h5 {
+                    padding: 4% 0;
+                    font-size: 1.25rem;
+                    text-transform: uppercase;
+                    color: $turquoise;
+                    text-decoration-color: red;
+                    font-weight: 300;
+                }
+    
+                p {
+                    font-size: 1.2rem;
+                    line-height: 1.5rem;
+                    padding-bottom: 4%;
+                }
+
+            }
+
+        }
+
+        .rumfaergeGalleriContainer {
+            margin: 5% 0% 3.5% 0%;
+
+            h5 {
+                font-size: 2.75rem;
+                text-align: center;
+                padding-bottom: 2.5%;
+            }
+
+            .rumfaergeGalleri {
+                display: grid;
+                gap: 37.5px;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+                img {
+                    width: 100%;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .rumfaergenWrapper {
+    
+        .rumfaergenContentContainer {
+            margin: 6.5% 0% 3.5% 0%;
+    
+            .rumfaergeGalleriContainer {
+                margin-bottom: 7.5%;
+            }
+    
+        }
+    
     }
 
 }

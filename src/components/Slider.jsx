@@ -1,103 +1,122 @@
 import React, { useState, useEffect } from 'react'
+import { getBannerSliderData } from '../helpers/api';
 import "../sass/Slider.scss"
+import Fejl from './Fejl';
+import Loading from './Loading';
 
-
-const Slider = (props) => {
+const Slider = () => {
     
-    const [slideIndex, setSlideIndex] = useState(0) // Første billede har index 0
+    const [slideIndex, setSlideIndex] = useState(0)
 
-    // http://localhost:4444/images/banner/
-    // Image-array (liste af billeder) fra parent
-    const sliderImages = props.tourGallery;
-    // Caption-tekst fra parent
-    const captiontxt = props.captiontext;
+    let timer;
+    
+    const [sliderBannerData, setSliderBannerData] = useState()
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
 
-    // Laver variabelen / instanstierer "t," som er til at styre setTimeout - så timeout kan clear'es i useEffect
-    let t;
+
+    useEffect(() => {
+
+        setLoading(true)
+        
+        getBannerSliderData()
+          .then( (data) => {
+            setSliderBannerData(data)
+            setError(false)
+          })
+          .catch( (err) => {
+            setError(true)
+            setSliderBannerData(false)
+          })
+          .finally( () => {
+            // uanset om der er data eller fejl stopper loading
+            setLoading(false)
+          });
+    
+      }, [])
 
     useEffect(() => {
       
-        let i; // Laver variabelen / instanstierer "i," som er tæller i loops
-        let slides = document.getElementsByClassName("mySlides"); // Ind i dokumentet og give alle slides
-        let dots = document.getElementsByClassName("dot"); // Ind i dokumentet og give alle dot
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let squares = document.getElementsByClassName("squares");
 
-        // Forhindrer at slide image - som skal vises - er -1, -2 osv.
         if (slideIndex >= slides.length) {
             setSlideIndex(0);
-            return; // Bryd ud af useEffect og start forfra med den nye state - "sidste billede"
+            return;
         }
 
-        // Forhindrer at slide image - som skal vises - bliver større en antallet af images
         if (slideIndex < 0) {
-            setSlideIndex(slides.length - 1); // Antal billeder minus 1 (for at danne karusel-visning).
-            return; // Bryd ud af useEffect og start forfra med den nye state - "sidste billede"
+            setSlideIndex(slides.length - 1);
+            return;
         }
 
-        // SLUK FOR ALLE IMAGES OG DOTS (SELVOM DER KUN ER 1 ACTIVE/VISNING)
-
-        // Skjul alle image-div
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        
-        // Tager alle de dots (selv kun 1 er active på pågældende tidspunkt), og hvor class'en så derfra bliver fjernet
-        for (i = 0; i < dots.length; i++) {
-            dots[i].classList.remove("active")
+
+        for (i = 0; i < squares.length; i++) {
+            squares[i].classList.remove("active")
         }
 
-        // Tænd for den slide og dot som skal vises nu
-        // slideIndex er et synonym for det, som skal vises netop lige nu
         slides[slideIndex].style.display = "block";
-        dots[slideIndex].classList.add("active");
+        squares[slideIndex].classList.add("active");
 
-        t = setTimeout(() => setSlideIndex(slideIndex + 1), 3000) // Her ligger vi 1 til hver gang hver 3. sekunder (3000 milisekunder). Vores useEffect sikre os dog for forhæn for, at slideren hverken kan gå i minus, og/eller at den ikke kan plusse for meget.
+        timer = setTimeout(() => setSlideIndex(slideIndex + 1), 3000)
 
-        // Cleanup-functin (indbygget i useEffect
         return () => {
-            // Nulstil evt.tidligere timer så de ikke hober sig op i en køi hukommelsen (ved mange klik fx prev)
-            clearTimeout(t);
+            clearTimeout(timer);
         }
 
-    }, [slideIndex])
+    }, [slideIndex, sliderBannerData])
 
   return (
 
     <div>
 
-        {/* <!-- Slideshow container --> */}
         <div className="slideshow-container">
 
-        {/* <!-- Selve billede-slideren med med tekstbeskrivelser --> */}
+            {
+                loading && <Loading />
+            }
 
-        {/* De to kommende sliderImages mappere er ej lagt sammen til én, da det her så ville blive udkrevet som billede-dot-billede-dot osv, i stedet for billede-billede-billede og derefter dot-dot-dot osv. */}
+            {
+                error && <h6><Fejl />{error}</h6>
+            }
 
-        {
-            sliderImages.map((s, i) =>
-                <div className="mySlides slidefade" key={"slide" + i}>
-                    <img src={"http://localhost:4444/images/banner/" + s} />
-                    <p className="text">{"Foto " + (i + 1) + " fra " + captiontxt}</p>
-                </div>
-            )
-        }
+            
+            {
+                sliderBannerData &&
 
-            {/* <!-- Next and previous buttons --> */}
-            <span className="next" onClick={() => setSlideIndex(slideIndex + 1)}>&#10095;</span>
-            <span className="prev" onClick={() => setSlideIndex(slideIndex - 1)}>&#10094;</span>
+                    <div className="sliderWrapper">
 
+                        <div className="sliderContainer">
 
-        {/* <!-- Dots/cirkler --> */}
+                            {
+                                sliderBannerData.map((s, i) =>
+                                <div className="mySlides" key={s + i}>
+                                    <img src={"http://localhost:4444/images/banner/" + s.image} alt="Billede fra rummet" />
+                                </div>
+                                )
+                            }
 
-        <div className="dotsContainer">
+                        </div>
 
-        {
+                        <div className="squaresWrapper">
 
-            sliderImages.map((s, i) =>
-                <span className="dot" onClick={() => setSlideIndex(i)} key={"dot" + i}></span>
-            )
+                            {
 
-        }
+                                sliderBannerData.map( (s, i) =>
+                                    <span className="squares" onClick={() => setSlideIndex(i)} key={"squares" + i}></span>
+                                )
 
-        </div>
+                            }
+
+                        </div>
+
+                    </div>
+
+            }
 
         </div>
 
