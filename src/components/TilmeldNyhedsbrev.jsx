@@ -8,7 +8,7 @@ import { createSubscribeNewsletter } from '../helpers/api'
 
 const TilmeldNyhedsbrev = () => {
 
-    const [subscriped, setSubscriped] = useState(false)
+    const [subscribed, setSubscribed] = useState(false)
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
 
@@ -23,11 +23,11 @@ const TilmeldNyhedsbrev = () => {
 
         createSubscribeNewsletter(formData)
         .then((data) => {
-            setSubscriped(true)
+            setSubscribed(true)
             setError(false)
         })
         .catch((err) => {
-            setSubscriped (false)
+            setSubscribed (false)
             setError (true)
         })
         .finally(() => {
@@ -51,12 +51,12 @@ const TilmeldNyhedsbrev = () => {
         }
 
         {
-            subscriped && <h6>Tusinde tak for din tilmelding af vores nyhedsbrev!</h6>
+            subscribed && <h6>Tusinde tak for din tilmelding af vores nyhedsbrev!</h6>
         }
 
         {/* Hvis ingen af ovenstående: vis formularen */}
         {
-            !subscriped &&
+            !subscribed &&
 
             <form onSubmit={handleNewsSubscription}>
                 <input type="email" label="Hej" name="email" placeholder="Din E-mail" required />

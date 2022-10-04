@@ -7,12 +7,12 @@
     grid-template-rows: 1fr;
     margin-bottom: 5vh;
 
-    img, h3, p, form {     
+    img, h3, p, h6, form {     
         grid-column: 1/-1;
         grid-row: 1/-1;
     }
     
-    h3, p, form {
+    h3, p, h6, form {
         justify-self: center;
         align-self: center;
         color: white;
@@ -26,6 +26,11 @@
     p {
         padding-bottom: 2%;
         font-weight: 600;
+    }
+
+    h6 {
+        padding-top: 5%;
+        font-size: 1.35rem;
     }
 
     form {
