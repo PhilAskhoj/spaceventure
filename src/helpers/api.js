@@ -29,30 +29,6 @@ export const getTours = () => {
 
 }
 
-// GET ALL (BY TEASER)
-export const getToursSearch = (searchWord) => {
-    // GET http://localhost:5099/tours/soeg/xxxxxx
-
-    let response = axiosBase.get("tours/soeg/" + searchWord)
-    .then(resp => {return resp.data})
-    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
-
-    return response;
-
-}
-
-// GET BY ID
-export const getTourByID = (ID) => {
-    // GET http://localhost:5099/tours/625c787debadcefe8ed39ac9
-
-    let response = axiosBase.get("tours/" + ID)
-    .then(resp => {return resp.data})
-    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
-
-    return response;
-
-}
-
 // GET "LIDT OM OS"
 export const getAbout = () => {
     // GET http://localhost:4444/about
@@ -103,11 +79,59 @@ export const getSpacecraft = () => {
 }
 
 
+// GET "GALLERI" PÅ SIDEN "RUMFÆRGE"
+export const getGallery = () => {
+    // GET http://localhost:4444/gallery
+
+    let response = axiosBase.get("gallery")
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
 // POST - TILMELDING AF NYHEDSBREV
 export const createSubscribeNewsletter = (subscribtionData) => {
     // POST http://localhost:4444/newssubscription
 
     let response = axiosBase.post("newssubscription", subscribtionData)
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+// GET ALLE TURE
+export const getAllTours = () => {
+    // GET http://localhost:4444/tours
+
+    let response = axiosBase.get("tours")
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+// GET BY ID
+export const getTourByID = (ID) => {
+    // GET http://localhost:4444/tours/617f80a6066b123e4c7c941a
+
+    let response = axiosBase.get("tours/" + ID)
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+// POST - TILMELDING AF NYHEDSBREV
+export const createContact = (contactData) => {
+    // POST http://localhost:4444/contact
+
+    let response = axiosBase.post("contact", contactData)
     .then(resp => {return resp.data})
     .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
 

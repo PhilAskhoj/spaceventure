@@ -15,6 +15,7 @@ import NoMatch from './pages/NoMatch';
 import Rumfaergen from './pages/Rumfaergen';
 import Sikkerhed from './pages/Sikkerhed';
 import Ture from './pages/Ture';
+import Tur from './pages/Tur';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
         <Route path="kontakt" element={ < Kontakt /> } />
         <Route path="login" element={ < Login /> } />
         <Route path="*" element={ < NoMatch /> } />
+
+        {/* : = parametre og er ikke en del af path'en */}
+        <Route path="tur/:turID" element={ < Tur /> } />
 
         {/* NoMatch skal ligges nedernes, da der køren oppefra og ned, så derigennme forstyrrer den ikke, de andre muligheder */}
         <Route path="*" element={ < NoMatch /> } />

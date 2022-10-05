@@ -5,18 +5,16 @@ import Team from '../components/Team'
 import TilmeldNyhedsbrev from '../components/TilmeldNyhedsbrev'
 import ToTureHome from '../components/ToTureHome'
 
-import "../sass/Home.scss"
-
 const Home = () => {
 
   return (
-    <div id="allToursWrapper">
+    <main>
       <Slider />
       <ToTureHome />
       <LidtOmOs />
       <Team />
       <TilmeldNyhedsbrev />
-    </div>
+    </main>
   )
 }
 

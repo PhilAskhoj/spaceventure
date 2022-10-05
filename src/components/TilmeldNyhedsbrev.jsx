@@ -59,8 +59,8 @@ const TilmeldNyhedsbrev = () => {
             !subscribed &&
 
             <form onSubmit={handleNewsSubscription}>
-                <input type="email" label="Hej" name="email" placeholder="Din E-mail" required />
-                <button>Tilmeld</button>
+                <input type="email" name="email" placeholder="Din E-mail" required />
+                <button type="submit">Tilmeld</button>
             </form>
 
         }

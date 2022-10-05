@@ -108,13 +108,41 @@
 
 }
 
+@media (max-width: 1050px) {
+
+    .rumfaergenWrapper {
+    
+        .rumfaergenContentContainer {
+            
+            .rumfaergeImgTekst {
+                flex-direction: column-reverse;
+                margin: 0 auto;
+                width: 80%;
+                
+                figure {
+                    width: 100%;
+                }
+                
+                .rumfaergeTekst {
+                    width: 100%;
+                    padding: 0.75% 0%;
+    
+                }
+    
+            }
+    
+        }
+
+    }
+
+}
+
 
 @media (max-width: 750px) {
 
     .rumfaergenWrapper {
     
         .rumfaergenContentContainer {
-            margin: 6.5% 0% 3.5% 0%;
     
             .rumfaergeGalleriContainer {
                 margin-bottom: 7.5%;

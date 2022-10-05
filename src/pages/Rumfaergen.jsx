@@ -5,11 +5,12 @@ import parse from 'html-react-parser'
 import "../sass/Rumfaergen.scss"
 
 // API-kald
-import { getSpacecraft } from '../helpers/api'
+import { getGallery, getSpacecraft } from '../helpers/api'
 
 const Rumfaergen = () => {
 
   const [rumfaerge, setRumfaerge] = useState()
+  const [galleri, setGalleri] = useState()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
@@ -32,7 +33,27 @@ const Rumfaergen = () => {
           setLoading(false)
         });
   
-    }, [])
+  }, [])
+
+  useEffect(() => {
+
+    setLoading(true)
+    
+    getGallery()
+      .then( (data) => {
+        setGalleri(data)
+        setError(false)
+      })
+      .catch( (err) => {
+        setError(true)
+        setGalleri(false)
+      })
+      .finally( () => {
+        // uanset om der er data eller fejl stopper loading
+        setLoading(false)
+      });
+
+}, [])
 
 
   return (
@@ -46,7 +67,7 @@ const Rumfaergen = () => {
 
       <div className="rumfaergenContentContainer">
 
-      {
+        {
             loading && <Loading />
         }
 
@@ -56,14 +77,14 @@ const Rumfaergen = () => {
 
         {
             rumfaerge &&
-                <div>
+                <div className="rumfaergeContent">
+          
                     {
-                      <div className="rumfaergeContent">
 
                         <div className="rumfaergeImgTekst">
 
                           <figure>
-                            <img src="./img/om-os.jpg" alt="Jorden set fra rumfærge/rumskib" />
+                            <img src={"http://localhost:4444/images/spacecraft/" + rumfaerge.image} alt="Jorden set fra rumfærge/rumskib" />
                           </figure>
 
                           <div className="rumfaergeTekst">
@@ -77,23 +98,36 @@ const Rumfaergen = () => {
 
                         </div>
 
-                        <div className="rumfaergeGalleriContainer">
-                          <h5>Galleri</h5>
-
-                          <div className="rumfaergeGalleri">
-
-                            <img src="./img/spaceship1.jpg" alt="Billede af flyvende rumfærge/rumskib" />
-                            <img src="./img/spaceship2.jpg" alt="Fotografi af flyvende rumfærge/rumskib" />
-                            <img src="./img/spaceship3.jpg" alt="Billede af rumfærge/rumskib, som står landet på planeten Månen" />
-                            <img src="./img/spaceship4.jpg" alt="Fotografi af interiør inden i en rumfærge/et rumskib" />
-
-                          </div>
-
-                        </div>
-
-                      </div>
                     }
+
                 </div>
+        }
+
+        {
+          
+          galleri &&
+
+            <div className="rumfaergeGalleriContainer">
+              <h5>Galleri</h5>
+
+                {
+
+                  <div className="rumfaergeGalleri">
+
+                      {
+                        
+                        galleri.map(g => (
+                            <img src={"http://localhost:4444/images/gallery/" + g.image} key={g._id} alt={g.imagetext} />
+                          ))
+
+                      }
+
+                  </div>
+
+                }
+
+            </div>
+
         }
 
       </div>

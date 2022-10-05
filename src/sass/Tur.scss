@@ -1,0 +1,34 @@
+@import "../helpers/variables";
+
+.individuelTurWrapper {
+    margin: 6.5% auto;
+    width: 80%;
+    display: flex;
+
+    .individuelTurImgWrapper {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        
+        figure {
+            height: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+        }
+
+    }
+
+    .individuelTurTekstWrapper {
+        padding-left: 6%;
+        height: 100%;
+        width: 50%;
+    }
+    
+}

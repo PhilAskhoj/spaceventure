@@ -62,7 +62,7 @@ const Slider = () => {
         slides[slideIndex].style.display = "block";
         squares[slideIndex].classList.add("active");
 
-        timer = setTimeout(() => setSlideIndex(slideIndex + 1), 3000)
+        timer = setTimeout(() => setSlideIndex(slideIndex + 1), 4000)
 
         return () => {
             clearTimeout(timer);
