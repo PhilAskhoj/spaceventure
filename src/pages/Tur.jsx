@@ -68,43 +68,54 @@ const TurID = () => {
 
                     <div className="individuelTurTekstWrapper">
 
-                        <div>
-                            <h1>{tur.destination}</h1>
-                            <h2>{tur.title}</h2>
-                            <p>{tur.price}</p>
-                            {parse(tur.content)} {/* Kommer i forvejen i et p-tag igennem API'et/backenden. Derfor skal det ikke indsættes i et p-tag her, da dette vil være semantisk ukorrekt, da der hermed ville opstå et p-tag inde i et p-tag */}
+                        <div className="individuelTurTekstContainer">
+
+                            <h2>{tur.destination}</h2>
+                            <p className="individuelTurPris">{tur.price}</p>
+
+                            <hr className="individuelTurHrTurquoiseShort" />
+
+                            <div className="individuelTurTekstContent">
+                                <h3>{tur.title}</h3>
+                                {parse (tur.content)} {/* Kommer i forvejen i et p-tag igennem API'et/backenden. Derfor skal det ikke indsættes i et p-tag her, da dette vil være semantisk ukorrekt, da der hermed ville opstå et p-tag inde i et p-tag */}
+                            </div>
+
                         </div>
 
-                        <div>
+                        <hr className="individuelTurHrLongGrey" />
 
-                            <div>
-                                <h6>Destination: </h6>
+                        <div className="individuelTurInfoContainer">
+
+                            <div className="individuelTurInfoContent">
+                                <h6>Destination:</h6>
                                 <p>{tur.destination}</p>
                             </div>
 
-                            <div>
-                                <h6>Pris: </h6>
+                            <div className="individuelTurInfoContent">
+                                <h6>Pris:</h6>
                                 <p>{tur.price}</p>
                             </div>
 
-                            <div>
-                                <h6>Afstand fra jorden: </h6>
+                            <div className="individuelTurInfoContent">
+                                <h6>Afstand fra jorden:</h6>
                                 <p>{tur.distance}</p>
                             </div>
 
-                            <div>
-                                <h6>Flyvetid: </h6>
+                            <div className="individuelTurInfoContent">
+                                <h6>Flyvetid:</h6>
                                 <p>{tur.traveltime}</p>
                             </div>
 
                         </div>
 
-                        <div>
+                        <hr className="individuelTurHrLongGrey" />
+
+                        <div className="individuelTurShareContainer">
                             <h5>SHARE</h5>
-                            <a href="https://www.facebook.com" target="_blank"><FaFacebookF className="icon" alt="Facebook ikon" /></a>
-                            <a href="https://www.twitter.com" target="_blank"><FaTwitter className="icon" alt="Twitter ikon" /></a>
-                            <a href="https://www.googleplus.com" target="_blank"><FaGooglePlusG className="icon" alt="Google+ ikon" /></a>
-                            <a href="https://www.instagram.com" target="_blank"><FaInstagram className="icon" alt="Instagram ikon" /></a>
+                            <a href="https://www.facebook.com" target="_blank"><FaFacebookF className="shareIcon" alt="Facebook ikon" /></a>
+                            <a href="https://www.twitter.com" target="_blank"><FaTwitter className="shareIcon" alt="Twitter ikon" /></a>
+                            <a href="https://www.googleplus.com" target="_blank"><FaGooglePlusG className="shareIcon" alt="Google+ ikon" /></a>
+                            <a href="https://www.instagram.com" target="_blank"><FaInstagram className="shareIcon" alt="Instagram ikon" /></a>
                         </div>
 
                     </div>
