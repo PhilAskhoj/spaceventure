@@ -1,67 +1,51 @@
 @import "../helpers/variables";
 
-.AdminToursEditWrapper {
+.adminAboutWrapper {
     margin: 5% 20%;
     border: 10px double $darkblue;
     border-radius: 15px;
     text-align: center;
     
     h1 {
-        padding: 2.5% 0% 5% 0%;
+        padding: 2.5% 0%;
     }
     
     form {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         
         label, input, textarea {
-            
             width: 75%;
             padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         
         input, textarea {
             margin-top: 2%;
             border-radius: 5px;
             border: 10px double $darkblue;
+            text-align: left;
         }
         
         label {
             font-weight: 600;
             width: 100%;
-
-            input[type="file"] {
-                cursor: pointer;
-            }
-
         }
         
         textarea {
             min-height: 150px;
             resize: vertical;
         }
-        
-       .ckeWrapper {
+
+        .ckeWrapper {
             width: 60%;
             border: 10px double $darkblue;
             padding: 1.5%;
             border-radius: 5px;
         }
-
-        img {
-            display: flex;
-            margin: 5px auto;
-            border-radius: 25px;
-            width: 40%;
-            border: 10px double $darkblue;
-            padding: 15px;
-        }
         
-        .AdminToursEditButton {
+        button {
             background-color: white;
             padding: 1% 2.5%;
             font-size: 1rem;
@@ -72,14 +56,14 @@
             margin: 2% 0% 4% 0%;
         }
         
-        .AdminToursEditButton:hover {
+        button:hover {
             background-color: $darkblue;
             color: white;
         }
 
     }
-    
-    .AdminToursEditMessage {
+
+    .adminAboutMessage {
         padding-bottom: 2.5%;
         width: 75%;
         margin: 0% auto 2.5% auto;
@@ -90,11 +74,12 @@
 
 @media only screen and (max-width: 1050px) {
 
-    .AdminToursEditWrapper {
+    .adminAboutWrapper {
         margin: 5% 10%;
 
         form {
-            
+            width: 100%;
+
             label, input, textarea {
                 width: 80%;
             }
@@ -107,7 +92,7 @@
 
 @media only screen and (max-width: 750px) {
 
-    .AdminToursEditWrapper {
+    .adminAboutWrapper {
         margin: 5% 5%;
 
         form {
@@ -118,10 +103,6 @@
 
             .ckeWrapper {
                 width: 90%;
-            }
-
-            img {
-                width: 60%;
             }
 
         }

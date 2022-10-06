@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import "../../sass/AboutAdmin.scss";
+import "../../sass/AdminSpacecraft.scss";
 
 // Kald af API
 import { getSpacecraft, updateSpacecraft } from '../../helpers/api';
@@ -64,7 +64,7 @@ const AdminAbout = () => {
     }
 
   return (
-    <div className="adminAboutWrapper">
+    <div className="adminSpacecraftWrapper">
         <h1>Ret indhold på siden "Rumfærgen"</h1>
 
         {
@@ -88,13 +88,12 @@ const AdminAbout = () => {
                     <input type="text" name="title" defaultValue={spacecraft.title}></input>
                 </label>
                 <br />
-                <br />
                 <label>Indhold:
                     <br />
                     {/* Tekstarea'ets indhold sendes i update - må ikke slettes! */}
                     <textarea style={{display: "none"}} type="text" name="content" defaultValue={ckeditortext}></textarea>
                 </label>
-                <div id="ckeWrapper">
+                <div className="ckeWrapper">
                     <CKEditor
                         editor={Editor} // Type af editor --> vi vælger den, vi har importet
                         data={spacecraft.content}
@@ -107,13 +106,15 @@ const AdminAbout = () => {
                         }}
                     />
                 </div>
-
+                <br />
                 <label>Billede:
                     <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
                     <br />
-                    Nuværende billede nr. 1: <img src={"http://localhost:4444/images/spacecraft/" + spacecraft.image} alt="Nuværende foto" />
                     <input type="file" accept="image/x-png,image/jpeg" />
+                    <br />
+                    <br />
+                    Nuværende billede: <img src={"http://localhost:4444/images/spacecraft/" + spacecraft.image} alt="Nuværende foto" />
                 </label>
 
                 <br />
@@ -125,7 +126,7 @@ const AdminAbout = () => {
         }
 
         {
-            message && <h2 id="adminAboutMessage">{message} ✔</h2>
+            message && <h2 className="adminSpacecraftMessage">{message} ✔</h2>
         }
 
     </div>

@@ -1,7 +1,10 @@
-#AdminToursCreateWrapper {
+@import "../helpers/variables";
+
+.AdminToursCreateWrapper {
     margin: 5% 20%;
-    box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.25);
+    border: 10px double $darkblue;
     border-radius: 15px;
+    text-align: center;
     
     h1 {
         padding: 2.5% 0%;
@@ -24,22 +27,11 @@
         input, textarea {
             margin-top: 2%;
             border-radius: 5px;
-            border: 2px solid black;
-            text-align: center;
+            border: 10px double $darkblue;
         }
         
         label {
             font-weight: 600;
-            
-            input {
-                text-align: center;
-            }
-
-            input[type="date"] {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-            }
 
             input[type="file"] {
                 cursor: pointer;
@@ -52,16 +44,11 @@
             resize: vertical;
         }
         
-       #ckeWrapper {
+       .ckeWrapper {
             width: 55%;
-            border: 2px solid black;
+            border: 10px double $darkblue;
             padding: 1.5%;
             border-radius: 5px;
-
-            label {
-                display: none;
-            }
-
         }
 
         img {
@@ -69,38 +56,40 @@
             margin: 5px auto;
             border-radius: 25px;
             width: 40%;
-            border: 2px solid black;
+            border: 10px double $darkblue;
             padding: 15px;
         }
         
-        #AdminToursCreateButton {
+        .AdminToursCreateButton {
             background-color: white;
-            padding: 5px 10px;
-            border: 2px solid black;
+            padding: 1% 2.5%;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid $darkblue;
             cursor: pointer;
             border-radius: 5px;
             margin-bottom: 4%;
         }
         
-        #AdminToursCreateButton:hover {
-            background-color: black;
+        .AdminToursCreateButton:hover {
+            background-color: $darkblue;
             color: white;
         }
 
     }
     
-    #AdminToursCreateMessage {
+    .AdminToursCreateMessage {
+        padding-bottom: 2.5%;
         width: 75%;
-        margin: 2.5% auto;
-        padding-bottom: 5%;
+        margin: 0% auto 2.5% auto;
         color: rgb(85, 227, 85);
     }
 
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1050px) {
 
-    #AdminToursCreateWrapper {
+    .AdminToursCreateWrapper {
         margin: 5% 10%;
 
         form {
@@ -115,15 +104,23 @@
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
 
-    #AdminToursCreateWrapper {
+    .AdminToursCreateWrapper {
         margin: 5% 5%;
 
         form {
             
             label, input, textarea {
                 width: 90%;
+            }
+
+            .ckeWrapper {
+                width: 90%;
+            }
+
+            img {
+                width: 60%;
             }
 
         }

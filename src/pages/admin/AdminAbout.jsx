@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import "../../sass/AboutAdmin.scss"
-
-// Ikoner
-import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
+import "../../sass/AdminAbout.scss"
 
 // Kald af API
 import { getAbout, updateAbout } from '../../helpers/api'
@@ -91,13 +88,12 @@ const AdminAbout = () => {
                     <input type="text" name="title" defaultValue={about.title}></input>
                 </label>
                 <br />
-                <br />
                 <label>Indhold:
                     <br />
                     {/* Tekstarea'ets indhold sendes i update - må ikke slettes! */}
                     <textarea style={{display: "none"}} type="text" name="content" defaultValue={ckeditortext}></textarea>
                 </label>
-                <div id="ckeWrapper">
+                <div className="ckeWrapper">
                     <CKEditor
                         editor={Editor} // Type af editor --> vi vælger den, vi har importet
                         data={about.content}
@@ -113,14 +109,14 @@ const AdminAbout = () => {
 
                 <br />
 
-                <button type="submit">Gem rettelse</button>
+                <button type="submit">Gem rettelse(r)</button>
 
             </form>
 
         }
 
         {
-            message && <h2 id="adminAboutMessage">{message} ✔</h2>
+            message && <h2 className="adminAboutMessage">{message} ✔</h2>
         }
 
     </div>

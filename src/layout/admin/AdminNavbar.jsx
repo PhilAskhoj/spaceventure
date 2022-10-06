@@ -24,9 +24,6 @@ const AdminNavbar = () => {
         <li>
           <NavLink to="/">BRUGER forside</NavLink>
         </li>
-        <li>
-          
-        </li>
       </ul>
 
     </nav>

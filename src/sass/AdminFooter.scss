@@ -45,3 +45,28 @@
     }
 
 }
+
+@media only screen and (max-width: 1050px) {
+
+    .adminFooter {
+    
+        div {
+            width: 40%;
+            margin-bottom: 2.5%;
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+
+    .adminFooter {
+    
+        div {
+            width: 60%;
+        }
+
+    }
+
+}

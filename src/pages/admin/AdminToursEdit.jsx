@@ -132,13 +132,13 @@ const AdminToursEdit = () => {
                         <input type="text" name="traveltime" defaultValue={tour.traveltime} required />
                     </label>
                     <br />
-                    <label>Første billede (desuden også det billede, vises som coverbillede på siden "Ture")
+                    <label>Første billede (desuden også det billede, vises som coverbillede på siden "Ture"):
                     <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
                     <br />
                         <input type="file" name="image1" />
                     </label>
-                    <label>Andet billede (som bliver vist under den enkelte tur)
+                    <label>Andet billede (som bliver vist under den enkelte tur sammen med ovenstående):
                     <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
                     <br />

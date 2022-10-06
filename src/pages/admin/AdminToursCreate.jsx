@@ -42,7 +42,7 @@ const AdminToursCreate = () => {
         //Promise chain
         createTour(newTour)
         .then((data) => {
-            setMessage("Ny tour er oprettet med følgende titel samt ID: '" + data.oprettet.title + "' '" + data.oprettet._id + "' ✔")
+            setMessage("Ny tour er oprettet med følgende destination samt ID: '" + data.oprettet.destination + "' '" + data.oprettet._id + "' ✔")
             setError(false)
             e.target.reset()            // Tøm/nulstil formularfelter
             setCkeditorTextContent("")  // Tøm state --> tømmer ckeditor
@@ -58,9 +58,9 @@ const AdminToursCreate = () => {
     }
 
   return (
-    <div id="AdminToursCreateWrapper">
+    <div className="AdminToursCreateWrapper">
 
-        <h1>Opret ny en ny tur</h1>
+        <h1>Opret en ny tur</h1>
 
 
         {
@@ -83,7 +83,7 @@ const AdminToursCreate = () => {
                 <label>Beskrivelse af tur:
                     <textarea style={{display: "none"}} name="content" defaultValue={ckeditorTextContent} required ></textarea>
                 </label>
-                <div id="ckeWrapper">
+                <div className="ckeWrapper">
                     {/* Fødekanal til textarea som skal skjules, men være der */}
                     <CKEditor
                         editor={Editor} // Type af editor --> vi vælger den, vi har importet
@@ -110,27 +110,27 @@ const AdminToursCreate = () => {
                     <input type="text" name="traveltime" required />
                 </label>
                 <br />
-                <label>Første billede (som desuden også det billede, der vil blive vist på siden "Ture" som et slags coverbillede):
+                <label>Første billede (desuden også det billede, vises som coverbillede på siden "Ture"):
                     <input type="file" name="image1" accept="image/x-png,image/jpeg" required />
                 </label>
                 <br />
-                <label>Andet billede (som desuden vil blive vidst under det første udelukkende på den enkelte turs side):
+                <label>Andet billede (som bliver vist under den enkelte tur sammen med ovenstående):
                     <input type="file" name="image2" accept="image/x-png,image/jpeg" required />
                 </label>
 
                 <br />
 
-                <button id="AdminToursCreateButton" type="submit">Opret ny tur</button>
+                <button className="AdminToursCreateButton" type="submit">Opret ny tur</button>
 
             </form>
         }
 
         {
             message &&
-            <h2 id="AdminToursCreateMessage">{message}</h2>
+            <h2 className="AdminToursCreateMessage">{message}</h2>
         }
     </div>
   )
 }
 
-export default AdminToursCreate
+export default AdminToursCreate;
