@@ -3,7 +3,7 @@ import "../../sass/AdminTours.scss"
 import { Link } from 'react-router-dom'
 
 // Kald af API
-import { getTours, deleteTour } from '../../helpers/api'
+import { deleteTour, getAllTours } from '../../helpers/api'
 
 import Fejl from '../../components/Fejl'
 import Loading from '../../components/Loading'
@@ -15,7 +15,7 @@ const AdminTours = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  // State til håndtering af om en tour er slettet - eller om der opstod fejl
+  // State til håndtering af om en tur er slettet - eller om der opstod fejl
   const [tourDeleted, setTourDeleted] = useState();
 
   // Kald API
@@ -23,7 +23,7 @@ const AdminTours = () => {
       
     setLoading(true);
 
-    getTours()
+    getAllTours()
         .then((data) => {
             setTours(data) // Her bliver der spurgt, om der kommer data ind, hvilket der gør, og derfor bliver data'en lagt ind i vores "setAboutContent" - altså vores state. Dette vil gøre, at component'en vil blive re-renderet taget dependency-listen i betragtning. Udover states er props de eneste to ting, som kan få vores component til at re-render.
             setError(false)
@@ -42,7 +42,7 @@ const AdminTours = () => {
 
   const handleDelete = (ID, title) => {
 
-    if(window.confirm("Er du sikker på, at du vil slette denne tour: '" + title + "' med dette ID: " + ID)) {
+    if(window.confirm("Er du sikker på, at du vil slette denne tur: '" + title + "' med dette ID: " + ID)) {
   
       // Brugeren for lov til at vælge "ja" eller nej." Hvis der trykke "nej" eller "cancel" vil funktionen ikke blive kørt, men trykkes der herimod "ja," vil funktionen blive kørt - og dermed bliver det slettet.
 

@@ -17,7 +17,7 @@ import Loading from '../../components/Loading'
 
 const AdminAbout = () => {
 
-    const [aboutContent, setAboutContent] = useState(); // data/tekst mv. der skal rettes
+    const [about, setAbout] = useState(); // data/tekst mv. der skal rettes
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
@@ -34,12 +34,12 @@ const AdminAbout = () => {
 
         getAbout()
             .then((data) => {
-                setAboutContent(data) // Her bliver der spurgt, om der kommer data ind, hvilket der gør, og derfor bliver data'en lagt ind i vores "setAboutContent" - altså vores state. Dette vil gøre, at component'en vil blive re-renderet taget dependency-listen i betragtning. Udover states er props de eneste to ting, som kan få vores component til at re-render.
+                setAbout(data) // Her bliver der spurgt, om der kommer data ind, hvilket der gør, og derfor bliver data'en lagt ind i vores "setAboutContent" - altså vores state. Dette vil gøre, at component'en vil blive re-renderet taget dependency-listen i betragtning. Udover states er props de eneste to ting, som kan få vores component til at re-render.
                 setError(false)
             })
             .catch((err) => {
                 setError(true)
-                setAboutContent()
+                setAbout(false)
             })
             .finally(() => {
                 setLoading(false)
@@ -68,7 +68,7 @@ const AdminAbout = () => {
 
   return (
     <div className="adminAboutWrapper">
-        <h1>Ret indhold på Om-siden</h1>
+        <h1>Ret indhold i sektionen "Lidt om os" på forsiden</h1>
 
         {
             //Hvis API-kaldet loader - den venter på error eller data
@@ -82,13 +82,13 @@ const AdminAbout = () => {
 
         {
             // Hvis der er API-data i state
-            aboutContent &&
+            about &&
 
             <form onSubmit={handleSubmit}>
 
                 <label>Titel:
                     <br />
-                    <input type="text" name="title" defaultValue={aboutContent.title}></input>
+                    <input type="text" name="title" defaultValue={about.title}></input>
                 </label>
                 <br />
                 <br />
@@ -100,7 +100,7 @@ const AdminAbout = () => {
                 <div id="ckeWrapper">
                     <CKEditor
                         editor={Editor} // Type af editor --> vi vælger den, vi har importet
-                        data={aboutContent.content}
+                        data={about.content}
                         onChange = {(event, editor) => {
                             setCkeditortext(editor.getData())
                         }}
@@ -119,7 +119,7 @@ const AdminAbout = () => {
                     <br />
                     <input id="inputFile" type="file" name="image"></input>
                 </label>
-                <img src={"http://localhost:5099/images/about/" + aboutContent.image} alt="Foto på siden 'Om os'" />
+                <img src="/img/om-os.jpg" alt="Foto på sectionen 'Lidt om os'" />
                 <br />
                 <br />
                 <button type="submit">Gem rettelse</button>

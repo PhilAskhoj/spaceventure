@@ -150,6 +150,19 @@ export const getSafety = () => {
 
 }
 
+// POST - OPRET NY TUR
+export const createTour = (newData) => {
+    // POST http://localhost:4444/tours/admin , formdata
+
+    let response = axiosBase.post("tours/admin", newData)
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+/* 
 // POST - OPRET NY
 export const createTour = (newData) => {
     // POST http://localhost:5099/tours/admin , formdata
@@ -160,7 +173,7 @@ export const createTour = (newData) => {
 
     return response;
 
-}
+} */
 
 // PUT - RET (ud fra ID)
 export const updateTour = (updatedData, ID) => {
@@ -191,7 +204,7 @@ export const deleteTour = (ID) => {
 
 // ----------- PUT -----------
 export const updateAbout = (aboutData) => {
-    // PUT http://localhost:5099/about/admin
+    // PUT http://localhost:4444/about/admin
 
     let response = axiosBase.put("about/admin", aboutData)
     .then(resp => {return resp.data})

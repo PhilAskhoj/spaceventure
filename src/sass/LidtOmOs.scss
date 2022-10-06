@@ -69,7 +69,7 @@
 @media (max-width: 1050px) {
 
     .aboutWrapper {
-        text-align: center;
+   
 
         .aboutContent {
             flex-direction: column-reverse;
@@ -81,12 +81,10 @@
             
             .aboutTekst {
                 width: 75%;
-                display: grid;
+                justify-content: left;
                 
                 button {
                     margin-bottom: 2.5%;
-                    justify-self: center;
-
                 }
     
             }
@@ -110,6 +108,11 @@
             
             .aboutTekst {
                 width: 110%;
+
+                button {
+                    margin-bottom: 5%;
+                }
+
             }
     
         }

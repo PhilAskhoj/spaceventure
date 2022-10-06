@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import "../../sass/AdminToursCreate.scss"
+import React, { useState } from 'react';
+import "../../sass/AdminToursCreate.scss";
 
-import Fejl from '../../components/Fejl'
-import Loading from '../../components/Loading'
+import Fejl from '../../components/Fejl';
+import Loading from '../../components/Loading';
 
 // RTE - Rich Text Editor - wysiwyg "What You See Is What You Get"
-import Editor from 'ckeditor5-custom-build'
-import { CKEditor } from '@ckeditor/ckeditor5-react'
+import Editor from 'ckeditor5-custom-build';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
 
-import { createTour } from '../../helpers/api'
+import { createTour } from '../../helpers/api';
 
 const AdminToursCreate = () => {
 
@@ -27,7 +27,6 @@ const AdminToursCreate = () => {
 
     // State til infhold fra texteditoren (bruges af textarea)
     const [ckeditorTextContent, setCkeditorTextContent] = useState()
-    const [ckeditorTextRoomtype, setCkeditorTextRoomtype] = useState()
 
     const handleSubmit = (e) => {
 
@@ -44,9 +43,9 @@ const AdminToursCreate = () => {
         createTour(newTour)
         .then((data) => {
             setMessage("Ny tour er oprettet med følgende titel samt ID: '" + data.oprettet.title + "' '" + data.oprettet._id + "' ✔")
+            setError(false)
             e.target.reset()            // Tøm/nulstil formularfelter
             setCkeditorTextContent("")  // Tøm state --> tømmer ckeditor
-            setCkeditorTextRoomtype("") // Tøm state --> tømmer ckeditor
         })
         .catch((err) => {
             setError(true)
@@ -61,7 +60,7 @@ const AdminToursCreate = () => {
   return (
     <div id="AdminToursCreateWrapper">
 
-        <h1>Opret ny tour</h1>
+        <h1>Opret ny en ny tur</h1>
 
 
         {
@@ -76,16 +75,12 @@ const AdminToursCreate = () => {
 
         {
             <form onSubmit={handleSubmit}>
-
+                
                 <label>Titel:
                     <input type="text" name="title" required />
                 </label>
                 <br />
-                <label>Teaser:
-                   <textarea name="teaser" required ></textarea>
-                </label>
-                <br />
-                <label>Beskrivelse:
+                <label>Beskrivelse af tur:
                     <textarea style={{display: "none"}} name="content" defaultValue={ckeditorTextContent} required ></textarea>
                 </label>
                 <div id="ckeWrapper">
@@ -96,48 +91,36 @@ const AdminToursCreate = () => {
                         onChange = {(event, editor) => {
                             setCkeditorTextContent(editor.getData())
                         }}
-                        />
+                    />
                 </div>
                 <br />
-                <label>Værelsestype:
-                    <textarea style={{display: "none"}} name="roomtype" defaultValue={ckeditorTextRoomtype} required ></textarea>
-                </label>
-                <div id="ckeWrapper">
-                    {/* Fødekanal til textarea som skal skjules, men være der */}
-                    <CKEditor
-                        editor={Editor} // Type af editor --> vi vælger den, vi har importet
-                        data = {ckeditorTextRoomtype}
-                        onChange = {(event, editor) => {
-                            setCkeditorTextRoomtype(editor.getData())
-                        }}
-                        />
-                </div>
-                <br />
-                <label>Rejsedato:
-                    <input type="date" name="traveldate" onChange={ e => new Date(e.target.value) < new Date() ? alert("Vælg venligst en dato senere end i dag") : null } required />
+                <label>Distance fra jorden:
+                    <input type="text" name="distance" required />
                 </label>
                 <br />
-                <label>Varighed angivet i dage:
-                    <input type="number" name="duration" min="1" max="500" defaultValue={14} required />
+                <label>Pris:
+                    <input type="text" name="price" required />
                 </label>
                 <br />
-                <label>Pris, minimum:
-                    <input type="number" name="priceminimum" required />
+                <label>Destination:
+                    <input type="text" name="destination" required />
                 </label>
                 <br />
-                <label>Pris, maksimum:
-                    <input type="number" name="pricemaximum" required />
+                <label>Flyvetid:
+                    <input type="text" name="traveltime" required />
                 </label>
                 <br />
-                <label>Upload et coverbillede:
-                    <input type="file" name="image" required />
+                <label>Første billede (som desuden også det billede, der vil blive vist på siden "Ture" som et slags coverbillede):
+                    <input type="file" name="image1" accept="image/x-png,image/jpeg" required />
                 </label>
                 <br />
-                <label>Upload galleri-billeder:
-                    <input type="file" name="galleryimages" multiple required />
+                <label>Andet billede (som desuden vil blive vidst under det første udelukkende på den enkelte turs side):
+                    <input type="file" name="image2" accept="image/x-png,image/jpeg" required />
                 </label>
+
                 <br />
-                <button id="AdminToursCreateButton" type="submit">Opret ny</button>
+
+                <button id="AdminToursCreateButton" type="submit">Opret ny tur</button>
 
             </form>
         }
