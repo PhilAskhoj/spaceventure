@@ -26,7 +26,6 @@ const AdminToursEdit = () => {
 
     // State til infhold fra texteditoren (bruges af textarea)
     const [ckeditorTextContent, setCkeditorTextContent] = useState()
-    const [ckeditorTextRoomtype, setCkeditorTextRoomtype] = useState()
 
     // Hent tour (ud fra ID) som skal rettes
     useEffect(() => {
@@ -100,11 +99,7 @@ const AdminToursEdit = () => {
                         <input type="text" name="title" defaultValue={tour.title} required />
                     </label>
                     <br />
-                    <label>Teaser:
-                    <textarea name="teaser" defaultValue={tour.teaser} required ></textarea>
-                    </label>
-                    <br />
-                    <label>Beskrivelse:
+                    <label>Beskrivelse af tur:
                         <textarea style={{display: "none"}} name="content" defaultValue={ckeditorTextContent} required ></textarea>
                     </label>
                     <div id="ckeWrapper">
@@ -121,61 +116,37 @@ const AdminToursEdit = () => {
                             />
                     </div>
                     <br />
-                    <label>Værelsestype:
-                        <textarea style={{display: "none"}} name="roomtype" defaultValue={ckeditorTextRoomtype} required ></textarea>
-                    </label>
-                    <div id="ckeWrapper">
-                        {/* Fødekanal til textarea som skal skjules, men være der */}
-                        <CKEditor
-                            editor={Editor} // Type af editor --> vi vælger den, vi har importet
-                            data = {tour.roomtype}
-                            onChange = {(event, editor) => {
-                                setCkeditorTextRoomtype(editor.getData()) // onChange gør, at når vi lndre teksten, skal den indhente data
-                            }}
-                            onReady = {(editor) => {
-                                setCkeditorTextRoomtype(editor.getData())
-                            }}
-                        />
-                    </div>
-                    <br />
-                    <label>Rejsedato:
-                        <input
-                            type="date"
-                            name="traveldate"
-                            defaultValue={new Date(tour.traveldate).toLocaleDateString("fr-CA")} // Her omskriver vi datoen til fransk-canadisk, da fr-CA returnerer det format i "yyyy-mm-dd," hvilket er den måde, som databasen modtager dato.
-                            min={new Date().toLocaleDateString("fr-CA")}  // Der kan ikke vælges en dag før dagen i dag. Der skal altså "min" vælges i dag eller en senere dato.
-                            required
-                        />
+                    <label>Distance fra jorden:
+                        <input type="text" name="distance" defaultValue={tour.distance} required />
                     </label>
                     <br />
-                    <label>Varighed angivet i dage:
-                        <input type="number" name="duration" min="1" max="500" defaultValue={tour.duration} required />
+                    <label>Pris:
+                        <input type="text" name="price" defaultValue={tour.price} required />
                     </label>
                     <br />
-                    <label>Pris, minimum:
-                        <input type="number" name="priceminimum" defaultValue={tour.priceminimum} required />
+                    <label>Destination:
+                        <input type="text" name="destination" defaultValue={tour.destination} required />
                     </label>
                     <br />
-                    <label>Pris, maksimum:
-                        <input type="number" name="pricemaximum" defaultValue={tour.pricemaximum} required />
+                    <label>Flyvetid:
+                        <input type="text" name="traveltime" defaultValue={tour.traveltime} required />
                     </label>
                     <br />
-                    <label>Upload et coverbillede:
+                    <label>Første billede (som desuden også det billede, der vil blive vist på siden "Ture" som et slags coverbillede)
                     <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
                     <br />
-                        <input type="file" name="image" />
+                        <input type="file" name="image1" />
                     </label>
-                    Nuværende billeder: <img src={"http://localhost:5099/images/tours/" + tour.coverimage} alt="Nuværende cover-foto" />
+                    <label>Første billede (som desuden også det billede, der vil blive vist på siden "Ture" som et slags coverbillede)
                     <br />
-                    <label>Upload eventuelt nogle nye galleri-billeder:
-                        <input type="file" name="galleryimages" multiple />
+                    (Det  eksisterende billede vil dermed blive erstattet)
+                    <br />
+                        <input type="file" name="image2" />
                     </label>
-                    Nuværende galleribilleder:
-                    {
-                        // i er den indbyggede "tæller" i map - tæller 0, 1, 2 osv. for hver runde - her bruger vi den til key (fordi der ikke er et ID)
-                        tour.gallery.map( (g, i) => <img src={"http://localhost:5099/images/tours/" + g} alt="galleri" key={i} />)
-                    }
+    
+                    Nuværende billede nr. 1: <img src={"http://localhost:4444/images/tours/" + tour.image1} alt="Nuværende cover-foto" />
+                    Nuværende billede nr. 2: <img src={"http://localhost:4444/images/tours/" + tour.image2} alt="Nuværende cover-foto" />
                     <br />
                     <button id="AdminToursEditButton" type="submit">Gem rettelse(r)</button>
 

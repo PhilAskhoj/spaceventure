@@ -1,13 +1,12 @@
-import React, {useState, useEffect} from 'react'
-import "../../sass/AdminTours.scss"
-import { Link } from 'react-router-dom'
+import React, {useState, useEffect} from 'react';
+import Loading from '../../components/Loading';
+import Fejl from '../../components/Fejl';
+import { Link } from 'react-router-dom';
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
+import "../../sass/AdminTours.scss";
 
 // Kald af API
-import { deleteTour, getAllTours } from '../../helpers/api'
-
-import Fejl from '../../components/Fejl'
-import Loading from '../../components/Loading'
-import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
+import { deleteTour, getAllTours } from '../../helpers/api';
 
 const AdminTours = () => {
 
@@ -30,7 +29,7 @@ const AdminTours = () => {
         })
         .catch( (err) => {
             setError(true)
-            setTours()
+            setTours(false)
         })
         .finally(() => {
             setLoading(false)
@@ -89,11 +88,11 @@ const AdminTours = () => {
             tours.map(t =>
               <div id="AdminToursContainer" key={t._id}>
                 <h2 id="AdminToursTitle">
-                  {t.title}
+                  Tur: "{t.destination}"
                 </h2>
-                <p id="AdminToursTeaser">
-                  {t.teaser}
-                </p>
+                <h3 id="AdminToursTitle">
+                 Med titlen: "{t.title}"
+                </h3>
                 <div id="AdminToursOptions">
                   <AiOutlineDelete id="AdminToursDelete" onClick={() => handleDelete(t._id, t.title)} title="Slet tour" alt="Symbol for sletning af tour"  />
                   <Link to={"/admin/admintoursedit/" + t._id}>

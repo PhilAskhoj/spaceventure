@@ -112,16 +112,7 @@ const AdminAbout = () => {
                 </div>
 
                 <br />
-                <br />
-                <label>Vælg eventuelt et nyt billede:
-                    <br />
-                    (Det  eksisterende billede vil dermed blive erstattet)
-                    <br />
-                    <input id="inputFile" type="file" name="image"></input>
-                </label>
-                <img src="/img/om-os.jpg" alt="Foto på sectionen 'Lidt om os'" />
-                <br />
-                <br />
+
                 <button type="submit">Gem rettelse</button>
 
             </form>

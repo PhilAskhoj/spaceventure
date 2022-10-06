@@ -80,7 +80,7 @@ const Kontakt = () => {
   
               <input type="text" name="name" placeholder='Navn' className="inputNavn" required />
               <input type="email" name="email" placeholder='E-mail' className="inputEmail" required />
-              <input type="integer" name="phone" placeholder='Tlf'className="inputTlf"  required />
+              <input type="tel" name="phone" placeholder='Tlf'className="inputTlf"  required />
   
             </div>
   

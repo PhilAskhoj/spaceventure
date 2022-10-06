@@ -48,21 +48,25 @@ Editor.defaultConfig = {
 
 	fontColor: {
         colors: [ {
-            color: '#E64C4C',
-            label: 'Red'
+			color: '#000',
+			label: 'Sort'
+		},
+		{
+            color: '#162E44',
+            label: 'Mørkeblå'
         },
         {
-            color: '#E6994C',
-            label: 'Orange'
+            color: '#01B3A7',
+            label: 'Turkis'
         },
         {
-            color: '#E6E64C',
-            label: 'Yellow'
+            color: '#11263A',
+            label: 'Mørkeste blå'
         },
         {
-            color: 'C0392B',
-            label: 'FTAred'
-        },
+            color: '#596875',
+            label: 'Mørkegrå'
+        }
         ]
     },
 
