@@ -15,6 +15,25 @@
       object-fit: cover;
     }
 
+    .slidertekstContainer {
+      position: absolute;
+      left: 10%;
+      bottom: 45%;
+      color: white;
+      max-width: 70%;
+      
+      h4 {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+
+      h2 {
+        font-size: 3rem;
+      }
+      
+    }
+
   }
 
   .squaresWrapper {
@@ -42,4 +61,45 @@
     width: 20px;
     background-color: rgb(190, 190, 190);
     transition: background-color 0.6s ease; // fading af background-color på squares
+}
+
+
+@media (max-width: 1050px) {
+
+  .mySlides {
+
+    .slidertekstContainer {
+      
+      h4 {
+        font-size: 1.25rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+      
+    }
+
   }
+
+}
+
+@media (max-width: 750px) {
+
+  .mySlides {
+
+    .slidertekstContainer {
+      
+      h4 {
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+    }
+
+  }
+
+}

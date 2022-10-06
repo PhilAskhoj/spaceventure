@@ -96,6 +96,12 @@ const Slider = () => {
                                 sliderBannerData.map((s, i) =>
                                 <div className="mySlides" key={s + i}>
                                     <img src={"http://localhost:4444/images/banner/" + s.image} alt="Billede fra rummet" />
+
+                                    <div className="slidertekstContainer">
+                                        <h4>{s.content}</h4>
+                                        <h2>{s.title}</h2>
+                                    </div>
+
                                 </div>
                                 )
                             }
