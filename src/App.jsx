@@ -7,6 +7,7 @@ import AdminHome from './pages/admin/AdminHome';
 import AdminTours from './pages/admin/AdminTours';
 import AdminToursCreate from './pages/admin/AdminToursCreate';
 import AdminToursEdit from './pages/admin/AdminToursEdit';
+import AdminSpacecraft from './pages/admin/AdminSpacecraft';
 import Galleri from './pages/Galleri';
 import Home from './pages/Home';
 import Kontakt from './pages/Kontakt';
@@ -40,7 +41,7 @@ function App() {
         <Route path="*" element={ < NoMatch /> } />
 
         {/* : = parametre og er ikke en del af path'en */}
-        <Route path="tur/:turID" element={ < Tur /> } />
+        <Route path="ture/tur/:turID" element={ < Tur /> } />
 
         {/* NoMatch skal ligges nedernes, da der køren oppefra og ned, så derigennme forstyrrer den ikke, de andre muligheder */}
         <Route path="*" element={ < NoMatch /> } />
@@ -56,6 +57,7 @@ function App() {
         <Route path="admintours" element={ < AdminTours /> } />
         <Route path="adminabout" element={ < AdminAbout /> } />
         <Route path="admintourscreate" element={ < AdminToursCreate /> } />
+        <Route path="adminspacecraft" element={ < AdminSpacecraft /> } />
         <Route path="admintoursedit/:tourID" element={ < AdminToursEdit /> } /> {/* : = parametre og er ikke en del af path'en */}
         <Route path="*" element={ < NoMatch /> } /> 
 

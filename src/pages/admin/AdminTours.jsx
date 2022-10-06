@@ -65,11 +65,11 @@ const AdminTours = () => {
 
   return (
 
-    <div id="AdminToursWrapper">
+    <div className="AdminToursWrapper">
 
-      <h1 id="AdminToursHeaderTitle">Tours</h1>
+      <h1 className="AdminToursHeaderTitle">Ture</h1>
 
-      <Link id="AdminNewTourLink" to="/admin/admintourscreate">Opret ny tour +</Link>
+      <Link className="AdminNewTourLink" to="/admin/admintourscreate">Opret ny tur +</Link>
 
       {
         //Hvis API-kaldet loader - den venter på error eller data
@@ -86,17 +86,17 @@ const AdminTours = () => {
 
           {
             tours.map(t =>
-              <div id="AdminToursContainer" key={t._id}>
-                <h2 id="AdminToursTitle">
+              <div className="AdminToursContainer" key={t._id}>
+                <h2 className="AdminToursTitle">
                   Tur: "{t.destination}"
                 </h2>
-                <h3 id="AdminToursTitle">
+                <h3 className="AdminToursTitle">
                  Med titlen: "{t.title}"
                 </h3>
-                <div id="AdminToursOptions">
-                  <AiOutlineDelete id="AdminToursDelete" onClick={() => handleDelete(t._id, t.title)} title="Slet tour" alt="Symbol for sletning af tour"  />
+                <div className="AdminToursOptions">
+                  <AiOutlineDelete className="AdminToursDelete" onClick={() => handleDelete(t._id, t.title)} title="Slet tour" alt="Symbol for sletning af tour"  />
                   <Link to={"/admin/admintoursedit/" + t._id}>
-                    <AiOutlineEdit id="AdminToursEdit" title="Rediger tour" alt="Symbol for redigering af tour" />
+                    <AiOutlineEdit className="AdminToursEdit" title="Rediger tour" alt="Symbol for redigering af tour" />
                   </Link>
                 </div>
               </div>

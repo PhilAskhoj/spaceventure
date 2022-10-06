@@ -1,48 +1,51 @@
-#AdminToursWrapper {
+@import "../helpers/variables";
+
+.AdminToursWrapper {
     margin: 5% 20%;
-    box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.25);
+    border: 10px double $darkblue;
+    text-align: center;
     border-radius: 15px;
     padding-bottom: 2.5%;
     
-    #AdminToursHeaderTitle {
+    .AdminToursHeaderTitle {
         padding: 2.5% 0% 5% 0%;
     }
 
-    #AdminNewTourLink {
-        border: 2px solid black;
+    .AdminNewTourLink {
+        border: 3px solid $darkblue;
         border-radius: 15px;
         padding: 1% 2.5%;
         text-decoration: none;
         color: black;
     }
 
-    #AdminNewTourLink:hover {
-        background-color: black;
+    .AdminNewTourLink:hover {
+        background-color: $darkblue;
         color: white;
     }
 
-    #AdminToursContainer {
+    .AdminToursContainer {
         padding: 2%;
         border-radius: 15px;
-        border: 2px solid black;
+        border: 10px double $darkblue;
         width: 75%;
         margin: 5% auto;
         
-        #AdminToursTeaser, #AdminToursDelete, #AdminToursEdit  {
+        .AdminToursTitle, .AdminToursDelete, .AdminToursEdit  {
             margin: 2% 0%;
         }
             
-         #AdminToursDelete, #AdminToursEdit {
+         .AdminToursDelete, .AdminToursEdit {
             margin: 0% 1%;
-            font-size: 1.5em;
+            font-size: 1.8em;
             cursor: pointer;
         }
         
-        #AdminToursDelete {
+        .AdminToursDelete {
             color: red;
         }
         
-        #AdminToursEdit {
+        .AdminToursEdit {
             color: green;
         }
 
@@ -50,19 +53,20 @@
 
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1050px) {
 
-    #AdminToursWrapper {
+    .AdminToursWrapper {
         margin: 5% 10%;
 
-        #AdminToursContainer {
+        .AdminToursContainer {
+            width: 75%;
             
-            #AdminToursTeaser, #AdminToursDelete, #AdminToursEdit  {
+            .AdminToursTitle, .AdminToursDelete, .AdminToursEdit  {
                 margin: 5% 0%;
             }
                 
-             #AdminToursDelete, #AdminToursEdit {
-                margin: 0% 2.5%;
+             .AdminToursDelete, .AdminToursEdit {
+                margin: 0% 2%;
             }
     
         }
@@ -71,8 +75,29 @@
 
 }
 
-@media only screen and (max-width: 600px) {
-    #AdminToursWrapper {
+@media only screen and (max-width: 750px) {
+
+    .AdminToursWrapper {
         margin: 5% 5%;
+
+        .AdminNewTourLink {
+            padding: 2% 5%;
+        }
+
+        .AdminToursContainer {
+            width: 90%;
+            margin: 7.5% auto;
+            
+            .AdminToursTitle, .AdminToursDelete, .AdminToursEdit  {
+                margin: 5% 0%;
+            }
+                
+             .AdminToursDelete, .AdminToursEdit {
+                margin: 0% 5%;
+            }
+    
+        }
+
     }
-  }
+
+}

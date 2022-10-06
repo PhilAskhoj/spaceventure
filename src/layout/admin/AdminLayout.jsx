@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import { Outlet, Navigate } from 'react-router-dom'
-import AdminFooter from './AdminFooter'
-import AdminHeader from './AdminHeader'
-import AdminNavbar from './AdminNavbar'
-import { LoginContext } from '../../context/LoginContext'
+import React, { useContext } from 'react';
+import { Outlet, Navigate } from 'react-router-dom';
+import AdminFooter from './AdminFooter';
+import AdminNavbar from './AdminNavbar';
+import { LoginContext } from '../../context/LoginContext';
+import AdminHeader from './AdminHeader';
 
 const AdminLayout = () => {
 

@@ -1,29 +1,31 @@
-import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
-import "../../sass/AdminNavbar.scss"
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import "../../sass/AdminNavbar.scss";
 
-// Context - til at finde ud af om der er logget ind eller ej
-import { LoginContext } from '../../context/LoginContext'
 
 const AdminNavbar = () => {
-
-  const {signOut} = useContext(LoginContext);
 
   return (
     <nav className="adminNavbar">
 
       <ul>
         <li>
-          <NavLink to="/admin">ADMIN HOME</NavLink>
+          <NavLink to="/admin" end>ADMIN forside</NavLink> {/* END SIGER: ER DER MERE END "/ADMIN TILKOBLET I URL'EN, SÅ VISER IKKE DENNE. DERFOR KUN VED UDELUKKENDE "/ADMIN" I URL, VIL DENNE SIDE BLIVE VIST */}
         </li>
         <li>
-          <NavLink to="admintours">Tours (admin)</NavLink>
+          <NavLink to="admintours">Ture</NavLink>
         </li>
         <li>
-          <NavLink to="adminabout">About (admin)</NavLink>
+          <NavLink to="adminabout">Lidt om os</NavLink>
         </li>
         <li>
-          <NavLink to="/">Forsiden</NavLink>
+          <NavLink to="adminspacecraft">Rumfærgen</NavLink>
+        </li>
+        <li>
+          <NavLink to="/">BRUGER forside</NavLink>
+        </li>
+        <li>
+          
         </li>
       </ul>
 

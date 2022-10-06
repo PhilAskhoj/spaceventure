@@ -76,9 +76,9 @@ const AdminToursEdit = () => {
     }
 
   return (
-    <div id="AdminToursEditWrapper">
+    <div className="AdminToursEditWrapper">
 
-        <h1>Ret tour</h1>
+        <h1>Ret tur</h1>
 
 
         {
@@ -102,7 +102,7 @@ const AdminToursEdit = () => {
                     <label>Beskrivelse af tur:
                         <textarea style={{display: "none"}} name="content" defaultValue={ckeditorTextContent} required ></textarea>
                     </label>
-                    <div id="ckeWrapper">
+                    <div className="ckeWrapper">
                         {/* Fødekanal til textarea som skal skjules, men være der */}
                         <CKEditor
                             editor={Editor} // Type af editor --> vi vælger den, vi har importet
@@ -132,13 +132,13 @@ const AdminToursEdit = () => {
                         <input type="text" name="traveltime" defaultValue={tour.traveltime} required />
                     </label>
                     <br />
-                    <label>Første billede (som desuden også det billede, der vil blive vist på siden "Ture" som et slags coverbillede)
+                    <label>Første billede (desuden også det billede, vises som coverbillede på siden "Ture")
                     <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
                     <br />
                         <input type="file" name="image1" />
                     </label>
-                    <label>Første billede (som desuden også det billede, der vil blive vist på siden "Ture" som et slags coverbillede)
+                    <label>Andet billede (som bliver vist under den enkelte tur)
                     <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
                     <br />
@@ -148,17 +148,17 @@ const AdminToursEdit = () => {
                     Nuværende billede nr. 1: <img src={"http://localhost:4444/images/tours/" + tour.image1} alt="Nuværende cover-foto" />
                     Nuværende billede nr. 2: <img src={"http://localhost:4444/images/tours/" + tour.image2} alt="Nuværende cover-foto" />
                     <br />
-                    <button id="AdminToursEditButton" type="submit">Gem rettelse(r)</button>
+                    <button className="AdminToursEditButton" type="submit">Gem rettelse(r)</button>
 
                 </form>
         }
 
         {
             message &&
-            <h2 id="AdminToursEditMessage">{message}</h2>
+            <h2 className="AdminToursEditMessage">{message}</h2>
         }
     </div>
   )
 }
 
-export default AdminToursEdit
+export default AdminToursEdit;

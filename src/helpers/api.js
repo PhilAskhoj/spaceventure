@@ -41,7 +41,6 @@ export const getAbout = () => {
 
 }
 
-
 // GET TEAM
 export const getTeam = () => {
     // GET http://localhost:4444/team
@@ -207,6 +206,18 @@ export const updateAbout = (aboutData) => {
     // PUT http://localhost:4444/about/admin
 
     let response = axiosBase.put("about/admin", aboutData)
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
+// PUT - RET "RUMFÆRGEN"
+export const updateSpacecraft = (spacecraftData) => {
+    // PUT http://localhost:4444/spacecraft/admin
+
+    let response = axiosBase.put("spacecraft/admin", spacecraftData)
     .then(resp => {return resp.data})
     .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
 

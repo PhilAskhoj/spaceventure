@@ -6,7 +6,7 @@
         padding: 3.5% 10%;
         display: flex;
         justify-content: space-between;
-        background-color: $darkblue;;
+        background-color: $darkblue;
         color: white;
         
         .footerKontakt {
@@ -14,6 +14,8 @@
             padding: 7.5% 0;
             gap: 20px;
             font-size: 1rem;
+            color: white;
+            text-decoration: none;
 
             &:hover {
                 color: $turquoise;

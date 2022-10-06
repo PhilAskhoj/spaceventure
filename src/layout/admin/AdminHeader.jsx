@@ -1,17 +1,18 @@
-import React, { useContext } from 'react'
-import { LoginContext } from '../../context/LoginContext'
-import "../../sass/Header.scss"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import "../../sass/AdminHeader.scss";
 
 const AdminHeader = () => {
-
-  const {user, signOut} = useContext(LoginContext);
-
   return (
-    <header>
-      Du er logget ind som: {user} &nbsp;
-      <button onClick={signOut}>Logud</button>
+    <header className="headerWrapper">
+      {/* SPAVE VENTURE - logo med link til forsiden "/" */ }
+      <Link className="navbarBrand" to="/">
+        <figure>
+          <img src="./img/logo.png" alt="Space venture logo" />
+        </figure>
+      </Link>
     </header>
   )
 }
 
-export default AdminHeader
+export default AdminHeader;

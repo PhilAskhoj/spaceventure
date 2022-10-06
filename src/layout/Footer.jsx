@@ -52,15 +52,15 @@ const Footer = () => {
 
                         {
                             <div key={footer._id}>
-                                <p className="footerKontakt">
+                                <a className="footerKontakt" href={"tel:" + footer.phone}>
                                 <BsTelephoneFill className="footerKontaktIcon" /> +45 {footer.phone}
-                                </p>
-                                <p className="footerKontakt">
+                                </a>
+                                <a className="footerKontakt" href={"mailto:" + footer.email}>
                                 <FaEnvelope className="footerKontaktIcon" /> {footer.email}
-                                </p>
-                                <p className="footerKontakt">
+                                </a>
+                                <a className="footerKontakt" href="https://goo.gl/maps/thuGw8x2bpfqCmLy6" target="_blank">
                                 <FaLocationArrow className="footerKontaktIcon" /> {footer.address}
-                                </p>
+                                </a>
                             </div>
 
                         }

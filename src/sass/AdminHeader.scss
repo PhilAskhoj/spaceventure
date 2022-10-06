@@ -1,8 +1,11 @@
 .headerWrapper {
   
     .navbarBrand {
-
+        
         figure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 0.5% 10%;
             width: 100%;
 
@@ -23,11 +26,7 @@
         .navbarBrand {
 
             figure {
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 padding: 2% 0% 2% 5%;
-
             }
 
         }
