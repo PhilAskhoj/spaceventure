@@ -1,8 +1,8 @@
 @import "../helpers/variables";
 
-.rumfaergenWrapper {
+.sikkerhedWrapper {
 
-    .rumfaergenBannerContainer {
+    .sikkerhedBannerContainer {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -13,7 +13,7 @@
         }
 
         figure {
-            width: 100%;
+            max-width: 100%;
 
             img {
                 width: 100%;
@@ -31,10 +31,10 @@
 
     }
 
-    .rumfaergenContentContainer {
+    .sikkerhedContentContainer {
         margin: 6.5% 0% 3.5% 0%;
         
-        .rumfaergeImgTekst {
+        .sikkerhedImgTekst {
             margin: 0% 0% 5% 10%;
             display: flex;
             width: 100%;
@@ -50,7 +50,7 @@
                 
             }
             
-            .rumfaergeTekst {
+            .sikkerhedTekst {
                 margin-right: 15%;
                 display: flex;
                 flex-direction: column;
@@ -59,21 +59,13 @@
                 padding: 0.75% 5%;
                 
                 h3 {
-                    font-size: 4.25rem;
+                    font-size: 3.5rem;
                     font-weight: 400;
                     color: rgba(169, 169, 169, 0.37);
                 }
-                
-                h5 {
-                    padding: 4% 0;
-                    font-size: 1.25rem;
-                    text-transform: uppercase;
-                    color: $turquoise;
-                    text-decoration-color: red;
-                    font-weight: 300;
-                }
-    
+
                 p {
+                    padding-top: 4%;
                     font-size: 1.2rem;
                     line-height: 1.5rem;
                     padding-bottom: 4%;
@@ -83,39 +75,18 @@
 
         }
 
-        .rumfaergeGalleriContainer {
-            margin: 5% 0% 3.5% 0%;
-
-            h5 {
-                font-size: 2.75rem;
-                text-align: center;
-                padding-bottom: 2.5%;
-            }
-
-            .rumfaergeGalleri {
-                display: grid;
-                gap: 37.5px;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-                img {
-                    width: 100%;
-                }
-
-            }
-
-        }
-
     }
 
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1200px) {
 
-    .rumfaergenWrapper {
+    .sikkerhedWrapper {
     
-        .rumfaergenContentContainer {
+        .sikkerhedContentContainer {
+            margin: 6.5% 0% 10% 0%;
             
-            .rumfaergeImgTekst {
+            .sikkerhedImgTekst {
                 flex-direction: column-reverse;
                 margin: 0 auto;
                 width: 80%;
@@ -124,9 +95,9 @@
                     width: 100%;
                 }
                 
-                .rumfaergeTekst {
+                .sikkerhedTekst {
                     width: 100%;
-                    padding: 0.75% 0%;
+                    padding: 0.75% 0% 2.5% 0%;
     
                 }
     
@@ -138,19 +109,35 @@
 
 }
 
+@media (max-width: 1200px) {
 
-@media (max-width: 750px) {
+    .sikkerhedWrapper {
+    
+        .sikkerhedContentContainer {
+            
+            .sikkerhedImgTekst {
+                flex-direction: column-reverse;
+                margin: 0 auto;
+                width: 80%;
+                
+                figure {
+                    width: 100%;
+                }
+                
+                .sikkerhedTekst {
+                    width: 100%;
+                    padding: 0.75% 0% 2.5% 0%;
 
-    .rumfaergenWrapper {
+                    h3 {
+                        font-size: 3rem;
+                    }
+
+                }
     
-        .rumfaergenContentContainer {
-    
-            .rumfaergeGalleriContainer {
-                margin-bottom: 7.5%;
             }
     
         }
-    
+
     }
 
 }

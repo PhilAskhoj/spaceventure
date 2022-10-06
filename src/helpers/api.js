@@ -139,6 +139,17 @@ export const createContact = (contactData) => {
 
 }
 
+export const getSafety = () => {
+    // GET http://localhost:4444/safety
+
+    let response = axiosBase.get("safety")
+    .then(resp => {return resp.data})
+    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
+
+    return response;
+
+}
+
 // POST - OPRET NY
 export const createTour = (newData) => {
     // POST http://localhost:5099/tours/admin , formdata

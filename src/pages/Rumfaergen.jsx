@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import Loading from '../components/Loading'
-import Fejl from '../components/Fejl'
-import parse from 'html-react-parser'
-import "../sass/Rumfaergen.scss"
+import React, { useState, useEffect } from 'react';
+import Loading from '../components/Loading';
+import Fejl from '../components/Fejl';
+import parse from 'html-react-parser';
+import "../sass/Rumfaergen.scss";
 
 // API-kald
 import { getGallery, getSpacecraft } from '../helpers/api'
