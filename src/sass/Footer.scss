@@ -117,6 +117,24 @@
 
 }
 
+@media (max-width: 1050px) {
+
+    .footer {
+    
+        .footerCopyIcons {
+            grid-template-columns: 1fr 1fr;
+
+            .footerSocialIcons {
+                grid-column: 2/-1;
+                justify-self: right;
+            }
+
+        }
+    
+    }
+
+}
+
 @media (max-width: 750px) {
 
     .footer {
@@ -147,16 +165,17 @@
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
             padding: 5% 10%;
-            gap: 15px;
-    
+            gap: 20px;
+            
             p, .footerSocialIcons {
                 grid-column: 1/-1;
+                justify-self: center;
             }
-    
+            
             p {
                 grid-row: 1/2;
             }
-    
+            
             .footerSocialIcons {
                 grid-row: 2/-1;
             }
