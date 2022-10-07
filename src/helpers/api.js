@@ -126,6 +126,8 @@ export const createContact = (contactData) => {
 
 }
 
+
+// GET - HENT SIKKERHED
 export const getSafety = () => {
     // GET http://localhost:4444/safety
 
@@ -150,9 +152,9 @@ export const createTour = (newData) => {
 }
 
 
-// PUT - RET (ud fra ID)
+// PUT - RET (UD FRA ID)
 export const updateTour = (updatedData, ID) => {
-    // PUT http://localhost:5099/tours/admin/6255cfb40b7abe9bb00a7014 , formdata
+    // PUT http://localhost:4444/tours/admin/617af72128fc8765b05fbbc5, formdata
 
     let response = axiosBase.put("tours/admin/" + ID, updatedData)
     .then(resp => {return resp.data})
@@ -164,7 +166,7 @@ export const updateTour = (updatedData, ID) => {
 
 // DELETE - SLET (ud fra ID)
 export const deleteTour = (ID) => {
-    // DELETE http://localhost:5099/tours/admin/xxxxxxxxxxxxxxxxxxxxx
+    // DELETE http://localhost:4444/tours/admin/633c51130ad3243464109700
 
     let response = axiosBase.delete("tours/admin/" + ID)
     .then(resp => {return resp.data})
@@ -174,10 +176,7 @@ export const deleteTour = (ID) => {
 
 }
 
-// ---------- ABOUT ----------
-// ---------------------------
-
-// ----------- PUT -----------
+// PUT - RET
 export const updateAbout = (aboutData) => {
     // PUT http://localhost:4444/about/admin
 
