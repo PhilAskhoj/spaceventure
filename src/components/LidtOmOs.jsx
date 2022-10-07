@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import Fejl from './Fejl'
-import Loading from './Loading'
-import parse from 'html-react-parser'
-import { NavLink } from 'react-router-dom'
-import "./../sass/LidtOmOs.scss"
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import parse from 'html-react-parser';
+import "./../sass/LidtOmOs.scss";
 
-// API-kald
-import { getAbout } from '../helpers/api'
+// COMPONENTS
+import Fejl from './Fejl';
+import Loading from './Loading';
+
+// API-KALD
+import { getAbout } from '../helpers/api';
 
 const LidtOmOs = () => {
 
     const [about, setAbout] = useState()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
-
 
     useEffect(() => {
 
@@ -43,7 +44,7 @@ const LidtOmOs = () => {
         }
 
         {
-            error && <h6><Fejl />{error}</h6>
+            error && <Fejl />
         }
 
         {

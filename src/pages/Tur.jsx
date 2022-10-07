@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import "../sass/Tur.scss";
+
+// COMPONENTS
 import Loading from '../components/Loading';
 import Fejl from '../components/Fejl';
 import parse from 'html-react-parser';
+
+// IKONER
 import { FaFacebookF, FaGooglePlusG, FaInstagram, FaTwitter } from 'react-icons/fa';
-import "../sass/Tur.scss";
 
 // API-kald
 import { getTourByID } from '../helpers/api';
 
-const TurID = () => {
+const Tur = () => {
 
     // Tage ID (ud fra URL'en) på den tour, der skal rettes (er en parameter - se i App.jsx)
     const {turID} = useParams()
@@ -129,4 +133,4 @@ const TurID = () => {
   )
 }
 
-export default TurID;
+export default Tur;

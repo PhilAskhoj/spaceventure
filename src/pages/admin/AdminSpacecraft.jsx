@@ -1,9 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import "../../sass/AdminSpacecraft.scss";
 
-// Kald af API
-import { getSpacecraft, updateSpacecraft } from '../../helpers/api';
-
 // RTE - Rich Text Editor - wysiwyg "What You See Is What You Get"
 import Editor from 'ckeditor5-custom-build';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -11,6 +8,9 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 // Components
 import Fejl from '../../components/Fejl';
 import Loading from '../../components/Loading';
+
+// Kald af API
+import { getSpacecraft, updateSpacecraft } from '../../helpers/api';
 
 const AdminAbout = () => {
 
@@ -74,7 +74,7 @@ const AdminAbout = () => {
 
         {
             // Hvis der er fejl fra API'et
-            error && <Fejl fejlbesked="Data kan ikke hentes. Prøv igen senere." />
+            error && <Fejl />
         }
 
         {

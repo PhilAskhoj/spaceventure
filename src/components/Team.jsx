@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import Fejl from './Fejl'
-import Loading from './Loading'
-import "../sass/Team.scss"
+import React, { useState, useEffect } from 'react';
+import "../sass/Team.scss";
+
+// COMPONENTS
+import Fejl from './Fejl';
+import Loading from './Loading';
 
 // API-kald
-import { getTeam } from '../helpers/api'
+import { getTeam } from '../helpers/api';
 
-// Output til map
-import TeamOutput from './TeamOutput'
+// OUTPUT TIL MAP
+import TeamOutput from './TeamOutput';
 
 const Team = () => {
 
@@ -46,7 +48,7 @@ const Team = () => {
         }
 
         {
-            error && <h6><Fejl />{error}</h6>
+            error && <Fejl />
         }
 
         {

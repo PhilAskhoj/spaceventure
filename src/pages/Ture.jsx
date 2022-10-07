@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import Fejl from '../components/Fejl'
-import Loading from '../components/Loading'
-import parse from 'html-react-parser'
-import { Link } from 'react-router-dom'
-import "../sass/Ture.scss"
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import parse from 'html-react-parser';
+import "../sass/Ture.scss";
+
+// COMPONENTS
+import Fejl from '../components/Fejl';
+import Loading from '../components/Loading';
 
 // API-kald
-import { getAllTours } from '../helpers/api'
-import Pagination from '../components/Pagination'
+import { getAllTours } from '../helpers/api';
+import Pagination from '../components/Pagination';
 
 const Ture = () => {
 
@@ -105,4 +107,4 @@ const Ture = () => {
   )
 }
 
-export default Ture
+export default Ture;

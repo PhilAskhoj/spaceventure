@@ -1,5 +1,5 @@
-import React from 'react'
-import "../../sass/AdminHome.scss"
+import React from 'react';
+import "../../sass/AdminHome.scss";
 
 const AdminHome = () => {
   return (

@@ -2,28 +2,12 @@ import React, { useContext, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import "../sass/Navbar.scss";
 
-import { LoginContext } from '../context/LoginContext';
 import { FaFacebookF, FaGooglePlusG, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Navbar = () => {
-  
-/*   // Context - til at finde ud af om der er logget ind eller ej
-  const {user, signOut} = useContext(LoginContext); */
 
   // State til om der er klikket på burger (true/false)
   const [showBurgermenu, setShowBurgermenu] = useState(false);
-
-  // SØGNING - START
-  const navigate = useNavigate()
-
-  const handleSearch = (e) => {
-    e.preventDefault(); // Hver gang der trykkes submit sker der reload. Dettte forhindre vi her.
-    console.log(e.target.search.value)
-
-    navigate('/search/' + e.target.search.value )
-  }
-
-  // SØGNING - SLUT
 
   return (
 
@@ -52,15 +36,7 @@ const Navbar = () => {
           <li><NavLink to="/galleri">Galleri</NavLink></li>
           <li><NavLink to="/sikkerhed">Sikkerhed</NavLink></li>
           <li><NavLink to="/kontakt">Kontakt</NavLink></li>
-{/*           {
-            //Ternary expression inde i vores localscope --> Spørger "hvis der er user," så gå til /admin "ellers" så gå til /login --> Tag et kig på hvis der er mere tid
-            user ?
-              <li><NavLink to="/admin" >ADMIN</NavLink></li>
-              :
-              <li><NavLink to="/login" >Login</NavLink></li>
-          } */}
         </ul>
-
       </div>
 
         <div>
@@ -75,4 +51,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

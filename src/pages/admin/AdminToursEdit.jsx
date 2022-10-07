@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import "../../sass/AdminToursEdit.scss"
-import { useParams } from 'react-router-dom'
-
-import Fejl from '../../components/Fejl'
-import Loading from '../../components/Loading'
+import React, { useState, useEffect } from 'react';
+import "../../sass/AdminToursEdit.scss";
+import { useParams } from 'react-router-dom';
 
 // RTE - Rich Text Editor - wysiwyg "What You See Is What You Get"
-import Editor from 'ckeditor5-custom-build'
-import { CKEditor } from '@ckeditor/ckeditor5-react'
+import Editor from 'ckeditor5-custom-build';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
 
-// APIKALD
-import { getTourByID, updateTour } from '../../helpers/api'
+// COMPONENTS
+import Fejl from '../../components/Fejl';
+import Loading from '../../components/Loading';
+
+// API-KALD
+import { getTourByID, updateTour } from '../../helpers/api';
 
 const AdminToursEdit = () => {
 

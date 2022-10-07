@@ -8,16 +8,10 @@ import Loading from '../../components/Loading';
 import Editor from 'ckeditor5-custom-build';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 
+// API-KALD
 import { createTour } from '../../helpers/api';
 
 const AdminToursCreate = () => {
-
-    /* 
-    1. Hvad skal der ske når component loader? Fx. kald til API eller andet? usEffect hvis API
-    2. Er der nogle events? - fx. gem nytour - hvor der skal ske et kald til API eller andet? useEffect hvis API 
-    
-    useEffect skal bruges når der er fx. API-kald - fx. når component loader - eller ved re-render (fx. slet)
-    */
 
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)

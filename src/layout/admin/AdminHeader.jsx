@@ -8,7 +8,7 @@ const AdminHeader = () => {
       {/* SPAVE VENTURE - logo med link til forsiden "/" */ }
       <Link className="navbarBrand" to="/">
         <figure>
-          <img src="./img/logo.png" alt="Space venture logo" />
+          <img src={process.env.PUBLIC_URL + '/img/logo.png'} alt="Space venture logo" />
         </figure>
       </Link>
     </header>

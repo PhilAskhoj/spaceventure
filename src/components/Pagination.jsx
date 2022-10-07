@@ -6,11 +6,9 @@ import { MdOutlineArrowLeft, MdOutlineArrowRight } from 'react-icons/md';
 
 const Pagination = (props) => {
 
-    //
     let setCurrentPage = props.setCurrentPage; // Give beksed til parent (output)
     let currentPage = props.currentPage; // Fåes fra/input fra parent (input)
     let numberOfPages = props.numberOfPages; //Antal af sider alt i alt, som der bliver beregnet i parent (input fra parent)
-
 
 // Skift visningen af side (pagination)
 const turnPage = (page) => {
@@ -21,7 +19,9 @@ const turnPage = (page) => {
 
 // Modtode som modtager et tal/antal og laver det tilsvarende antal sider
 const makePageLinks = () => {
+
     let pageLinks = []
+
     for (let i = 0; i < numberOfPages; i++) {
       /* Link/button laves med onClick, hvor der ligges en til */
       pageLinks.push( <button onClick={() => setCurrentPage(i)} className={currentPage === i ? "pagActive" : null} key={"p" + i} >{i + 1}</button> )

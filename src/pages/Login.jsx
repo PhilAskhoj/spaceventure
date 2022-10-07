@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
-import { Navigate } from 'react-router-dom'
-import "../sass/Login.scss"
+import React, { useContext } from 'react';
+import { Navigate } from 'react-router-dom';
+import "../sass/Login.scss";
 
 // Import context da der dermed bliver muligt at foretage login
 import { LoginContext } from '../context/LoginContext';
@@ -47,4 +47,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;

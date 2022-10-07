@@ -1,12 +1,16 @@
-import React from 'react'
-import "../sass/Footer.scss"
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import Loading from '../components/Loading';
+import Fejl from '../components/Fejl';
+import "../sass/Footer.scss";
 
-import { useState, useEffect } from 'react'
-import { getFooter } from '../helpers/api'
-import { NavLink } from 'react-router-dom'
-
+// IKONER
 import { BsTelephoneFill } from 'react-icons/bs';
-import { FaEnvelope, FaLocationArrow, FaFacebookF, FaGooglePlusG, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaEnvelope, FaLocationArrow, FaFacebookF, FaGooglePlusG, FaInstagram, FaTwitter } from 'react-icons/fa';
+
+// API-KALD
+import { getFooter } from '../helpers/api';
 
 const Footer = () => {
   
@@ -84,15 +88,11 @@ const Footer = () => {
 
                 </div>
             {
-                loading &&
-                <p>
-                    Dataen loades... vent venligst
-                </p>
+                loading && <Loading />
             }
 
             {
-                error &&
-                <h1>Der er dersværre opstået en fejl</h1>
+                error && <Fejl />
             }
 
       </div>

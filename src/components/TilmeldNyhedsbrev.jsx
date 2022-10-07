@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
-import Fejl from './Fejl'
-import Loading from './Loading'
-import "../sass/TilmeldNyhedsbrev.scss"
+import React, { useState } from 'react';
+import "../sass/TilmeldNyhedsbrev.scss";
+
+// COMPONENTS
+import Fejl from './Fejl';
+import Loading from './Loading';
 
 // API-kald
 import { createSubscribeNewsletter } from '../helpers/api'
@@ -47,7 +49,7 @@ const TilmeldNyhedsbrev = () => {
         }
 
         {
-            error && <h6><Fejl />{error}</h6>
+            error && <Fejl />
         }
 
         {

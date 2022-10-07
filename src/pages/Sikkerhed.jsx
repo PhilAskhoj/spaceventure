@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+
+// COMPONENTS
 import Loading from '../components/Loading';
 import Fejl from '../components/Fejl';
-import { getSafety } from '../helpers/api';
 import "../sass/Sikkerhed.scss";
+
+// API-KALD
+import { getSafety } from '../helpers/api';
 
 const Sikkerhed = () => {
 

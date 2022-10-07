@@ -5,7 +5,7 @@ import parse from 'html-react-parser';
 import "../sass/Rumfaergen.scss";
 
 // API-kald
-import { getGallery, getSpacecraft } from '../helpers/api'
+import { getGallery, getSpacecraft } from '../helpers/api';
 
 const Rumfaergen = () => {
 
@@ -72,7 +72,7 @@ const Rumfaergen = () => {
         }
 
         {
-            error && <h6><Fejl />{error}</h6>
+            error && <Fejl />
         }
 
         {
@@ -136,4 +136,4 @@ const Rumfaergen = () => {
   )
 }
 
-export default Rumfaergen
+export default Rumfaergen;

@@ -1,7 +1,9 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import "../sass/ToTureHome.scss"
-import { HiArrowNarrowRight } from 'react-icons/hi'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import "../sass/ToTureHome.scss";
+
+// IKON
+import { HiArrowNarrowRight } from 'react-icons/hi';
 
 const ToTureHome = () => {
 
@@ -10,7 +12,7 @@ const ToTureHome = () => {
 
       <div className="toTureContent">
 
-      <NavLink className="toTureMaanen" to="/ture">
+      <NavLink className="toTureMaanen" to="/ture/tur/617f8116066b123e4c7c941c">
 
         <div>
 
@@ -24,7 +26,7 @@ const ToTureHome = () => {
 
       </NavLink>
 
-      <NavLink className="toTureMars" to="/ture">
+      <NavLink className="toTureMars" to="/ture/tur/617f80a6066b123e4c7c941a">
 
       <div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../sass/Galleri.scss"
+import "../sass/Galleri.scss";
 
 const Galleri = () => {
 
@@ -40,4 +40,4 @@ const Galleri = () => {
   )
 }
 
-export default Galleri
+export default Galleri;

@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react'
-import "../sass/Kontakt.scss"
-
+import React, {useState} from 'react';
+import "../sass/Kontakt.scss";
+import Loading from '../components/Loading';
+import Fejl from '../components/Fejl';
 
 // API-kald
-import { createContact } from '../helpers/api'
-import Loading from '../components/Loading'
-import Fejl from '../components/Fejl'
+import { createContact } from '../helpers/api';
 
 const Kontakt = () => {
 
@@ -63,7 +62,7 @@ const Kontakt = () => {
         }
 
         {
-            error && <h6><Fejl />{error}</h6>
+            error && <Fejl />
         }
 
         {
@@ -100,4 +99,4 @@ const Kontakt = () => {
 
 }
 
-export default Kontakt
+export default Kontakt;

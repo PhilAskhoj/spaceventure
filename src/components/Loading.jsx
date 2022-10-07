@@ -1,9 +1,9 @@
-import React from 'react'
-import "./Loading.css"
+import React from 'react';
+import "../sass/Loader.scss";
 
 const Loading = () => {
   return (
-    <div className="loader">.</div>
+    <div className="loader"></div>
   )
 }
 

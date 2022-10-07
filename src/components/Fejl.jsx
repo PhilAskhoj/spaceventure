@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import "../sass/Fejl.scss";
 
-const Fejl = (props) => {
+// DENNE FEJL VISES, HVIS DER SKULLE FOREKOMME FEJLKOMBLIKATIONER PÅ SIDEN I FORBINDELSE MED API'ET.
+const Fejl = () => {
   return (
-    <div>Fejl -  <span>{props.fejlbesked}</span></div>
+    <p className="fejlBesked">Der er desværre på beklageligvis opstået en fejl.</p>
   )
 }
 

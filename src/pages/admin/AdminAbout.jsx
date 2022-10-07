@@ -1,16 +1,16 @@
-import React, {useState, useEffect} from 'react'
-import "../../sass/AdminAbout.scss"
-
-// Kald af API
-import { getAbout, updateAbout } from '../../helpers/api'
+import React, {useState, useEffect} from 'react';
+import "../../sass/AdminAbout.scss";
 
 // RTE - Rich Text Editor - wysiwyg "What You See Is What You Get"
-import Editor from 'ckeditor5-custom-build'
-import { CKEditor } from '@ckeditor/ckeditor5-react'
+import Editor from 'ckeditor5-custom-build';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
 
 // Components
-import Fejl from '../../components/Fejl'
-import Loading from '../../components/Loading'
+import Fejl from '../../components/Fejl';
+import Loading from '../../components/Loading';
+
+// Kald af API
+import { getAbout, updateAbout } from '../../helpers/api';
 
 const AdminAbout = () => {
 
@@ -74,7 +74,7 @@ const AdminAbout = () => {
 
         {
             // Hvis der er fejl fra API'et
-            error && <Fejl fejlbesked="Data kan ikke hentes. Prøv igen senere." />
+            error && <Fejl />
         }
 
         {
@@ -123,4 +123,4 @@ const AdminAbout = () => {
   )
 }
 
-export default AdminAbout
+export default AdminAbout;

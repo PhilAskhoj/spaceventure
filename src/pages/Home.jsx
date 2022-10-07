@@ -1,9 +1,11 @@
-import React from 'react'
-import LidtOmOs from '../components/LidtOmOs'
-import Slider from '../components/Slider'
-import Team from '../components/Team'
-import TilmeldNyhedsbrev from '../components/TilmeldNyhedsbrev'
-import ToTureHome from '../components/ToTureHome'
+import React from 'react';
+
+// COMPONENTS
+import LidtOmOs from '../components/LidtOmOs';
+import Slider from '../components/Slider';
+import Team from '../components/Team';
+import TilmeldNyhedsbrev from '../components/TilmeldNyhedsbrev';
+import ToTureHome from '../components/ToTureHome';
 
 const Home = () => {
 
@@ -18,4 +20,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { getBannerSliderData } from '../helpers/api';
-import "../sass/Slider.scss"
+import React, { useState, useEffect } from 'react';
+import "../sass/Slider.scss";
+
+// COMPONENTS
 import Fejl from './Fejl';
 import Loading from './Loading';
+
+// API-KALD
+import { getBannerSliderData } from '../helpers/api';
 
 const Slider = () => {
     
@@ -81,10 +85,9 @@ const Slider = () => {
             }
 
             {
-                error && <h6><Fejl />{error}</h6>
+                error && <Fejl />
             }
 
-            
             {
                 sliderBannerData &&
 

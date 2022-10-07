@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react';
 import Loading from '../../components/Loading';
 import Fejl from '../../components/Fejl';
 import { Link } from 'react-router-dom';
-import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 import "../../sass/AdminTours.scss";
+
+// IKONER
+import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
 // Kald af API
 import { deleteTour, getAllTours } from '../../helpers/api';
@@ -78,7 +80,7 @@ const AdminTours = () => {
 
       {
         // Hvis der er fejl fra API'et
-        error && <Fejl fejlbesked="Data kan ikke hentes. Prøv igen senere." />
+        error && <Fejl />
       }
 
       {
@@ -113,4 +115,4 @@ const AdminTours = () => {
 
 }
 
-export default AdminTours
+export default AdminTours;
