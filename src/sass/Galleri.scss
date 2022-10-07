@@ -1,7 +1,7 @@
 @import "../helpers/variables";
 
 .galleriWrapper {
-
+    
     .galleriBannerContainer {
         display: grid;
         grid-template-columns: 1fr;
@@ -32,26 +32,25 @@
     }
 
     .galleriContainer {
-        
+        margin: 2% 2% 4% 2%;
+
         h3 {
-            margin: 3.25% auto 0% auto;
+            margin: 3.25% auto 4% auto;
             width: 80%;
             text-align: center;
             font-size: 1.8rem;
         }
-
         
         .galleriContentContainer {
-            margin: 2% 1.5% 3.5% 1.5%;
             display: grid;
-            gap: 25px;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 17.5px;
             
             img {
                 justify-self: center;
                 height: 350px;
                 width: 350px;
-                margin: 10% 0%;
+                
                 object-fit: cover;
                 transform: scale(1);
                 transition: transform 0.25s ease-in-out;
@@ -60,19 +59,19 @@
                     transform: scale(1.1);
                 }
             }
-        
+            
         }
-
+        
     }
-
+    
 }
 
 @media (max-width: 750px) {
-
+    
     .galleriWrapper {
-
+        
         .galleriContainer {
-
+            
             h3 {
                 font-size: 1.5rem;
             }
