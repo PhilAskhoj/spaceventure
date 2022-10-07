@@ -164,7 +164,7 @@ export const updateTour = (updatedData, ID) => {
 
 }
 
-// DELETE - SLET (ud fra ID)
+// DELETE - SLET (UD FRA ID)
 export const deleteTour = (ID) => {
     // DELETE http://localhost:4444/tours/admin/633c51130ad3243464109700
 
