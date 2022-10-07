@@ -11,7 +11,7 @@ const LoginContextProvider = (props) => {
     // Login-funktion (stemmer brugernavn og password over ens)
     // -----------------------------------------------------
     let signIn = ( username, password ) => {
-        if( username === "Admin" && password === "oktober2022" ) {
+        if( username === "Admin" && password === "Oktober2022" ) {
             setUser( username ); // Logget in
         } else {
             setUser( null );     // "Logget ud"

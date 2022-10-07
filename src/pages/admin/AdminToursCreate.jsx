@@ -39,8 +39,8 @@ const AdminToursCreate = () => {
         .then((data) => {
             setMessage("Ny tur er oprettet med følgende destination samt ID: '" + data.oprettet.destination + "' '" + data.oprettet._id + "' ✔")
             setError(false)
-            e.target.reset()            // Tøm/nulstil formularfelter
-            setCkeditorTextContent("")  // Tøm state --> tømmer ckeditor
+            e.target.reset() // Tøm/nulstil formularfelter
+            setCkeditorTextContent("") // Tøm state --> tømmer ckeditor
         })
         .catch((err) => {
             setError(true)
