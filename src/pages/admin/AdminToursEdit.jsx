@@ -55,7 +55,7 @@ const AdminToursEdit = () => {
 
         setLoading(true);
 
-        // Kald API og opret/POST ny tour
+        // Kald API til ret/PUT tur
 
         // Formularindhold laves om til form-data
         let updatedTour = new FormData(e.target);
@@ -63,7 +63,7 @@ const AdminToursEdit = () => {
         //Promise chain
         updateTour(updatedTour, tourID)
         .then((data) => {
-            setMessage("Touren er nu rettet ✔")
+            setMessage("Turen er nu rettet ✔")
             setError(false)
         })
         .catch((err) => {
@@ -81,7 +81,6 @@ const AdminToursEdit = () => {
 
         <h1>Ret tur</h1>
 
-
         {
             // Hvis API-kaldet loader - den venter på error eller data
             loading && <Loading />
@@ -94,12 +93,13 @@ const AdminToursEdit = () => {
 
         {
             tour &&
+
                 <form onSubmit={handleSubmit}>
 
                     <label>Titel:
                         <input type="text" name="title" defaultValue={tour.title} required />
                     </label>
-                    <br />
+                        <br />
                     <label>Beskrivelse af tur:
                         <textarea style={{display: "none"}} name="content" defaultValue={ckeditorTextContent} required ></textarea>
                     </label>
@@ -116,39 +116,38 @@ const AdminToursEdit = () => {
                             }}
                             />
                     </div>
-                    <br />
+                        <br />
                     <label>Distance fra jorden:
                         <input type="text" name="distance" defaultValue={tour.distance} required />
                     </label>
-                    <br />
+                        <br />
                     <label>Pris:
                         <input type="text" name="price" defaultValue={tour.price} required />
                     </label>
-                    <br />
+                        <br />
                     <label>Destination:
                         <input type="text" name="destination" defaultValue={tour.destination} required />
                     </label>
-                    <br />
+                        <br />
                     <label>Flyvetid:
                         <input type="text" name="traveltime" defaultValue={tour.traveltime} required />
                     </label>
-                    <br />
+                        <br />
                     <label>Første billede (desuden også det billede, vises som coverbillede på siden "Ture"):
-                    <br />
+                        <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
-                    <br />
+                        <br />
                         <input type="file" name="image1" />
                     </label>
                     <label>Andet billede (som bliver vist under den enkelte tur sammen med ovenstående):
-                    <br />
+                        <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
-                    <br />
+                        <br />
                         <input type="file" name="image2" />
                     </label>
-    
                     Nuværende billede nr. 1: <img src={"http://localhost:4444/images/tours/" + tour.image1} alt="Nuværende cover-foto" />
                     Nuværende billede nr. 2: <img src={"http://localhost:4444/images/tours/" + tour.image2} alt="Nuværende cover-foto" />
-                    <br />
+                        <br />
                     <button className="AdminToursEditButton" type="submit">Gem rettelse(r)</button>
 
                 </form>
@@ -158,6 +157,7 @@ const AdminToursEdit = () => {
             message &&
             <h2 className="AdminToursEditMessage">{message}</h2>
         }
+
     </div>
   )
 }

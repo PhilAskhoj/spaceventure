@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
 import "../sass/Login.scss";
 
-// Import context da der dermed bliver muligt at foretage login
+// IMPORT CONTEXT DA DET DERMED BLIVR MULIGT AT FORETAGE LOGIN
 import { LoginContext } from '../context/LoginContext';
 
 const Login = () => {
@@ -27,6 +27,7 @@ const Login = () => {
 
   return (
     <div className="loginWrapper">
+
       <h1>Login</h1>
 
       <form onSubmit={handleLogin}>

@@ -1,19 +1,20 @@
-import React, { useContext, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import "../sass/Navbar.scss";
 
+// IKONER
 import { FaFacebookF, FaGooglePlusG, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Navbar = () => {
 
-  // State til om der er klikket på burger (true/false)
+  // State til om der er klikket på burgeren (true/false)
   const [showBurgermenu, setShowBurgermenu] = useState(false);
 
   return (
 
     <nav className="navbar">
 
-      {/* BURGERMENU */}
+      {/* --- BURGERMENU --- */}
 
       {/* VED CLASSNAME = TERNARY EXPRESSION. DER SPØRGES OM HVIS SHOWBURGERMENU (STATE SOM OGSÅ BRUGES I FORBINDELSE MED ONCLICK PÅ BURGERMENUEN (TOGGLEBUTTON)) ER TRUE, SKAL DEN VISES MED CLASSEN TOGGLEBUTTON OG CHANGE, ELLERS SKAL DER BLOT VISES TOGGLEBUTTON UDEN CHANGE */}
     

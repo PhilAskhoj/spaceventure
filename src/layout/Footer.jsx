@@ -1,9 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import "../sass/Footer.scss";
+
+// COMPONENTS
 import Loading from '../components/Loading';
 import Fejl from '../components/Fejl';
-import "../sass/Footer.scss";
 
 // IKONER
 import { BsTelephoneFill } from 'react-icons/bs';
@@ -117,4 +119,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default Footer;

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "../sass/ToTureHome.scss";
 
-// IKON
+// IKON (PIL)
 import { HiArrowNarrowRight } from 'react-icons/hi';
 
 const ToTureHome = () => {

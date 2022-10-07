@@ -10,7 +10,7 @@ import parse from 'html-react-parser';
 // IKONER
 import { FaFacebookF, FaGooglePlusG, FaInstagram, FaTwitter } from 'react-icons/fa';
 
-// API-kald
+// API-KALD
 import { getTourByID } from '../helpers/api';
 
 const Tur = () => {

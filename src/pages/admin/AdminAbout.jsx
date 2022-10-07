@@ -5,11 +5,11 @@ import "../../sass/AdminAbout.scss";
 import Editor from 'ckeditor5-custom-build';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 
-// Components
+// COMPONENTS
 import Fejl from '../../components/Fejl';
 import Loading from '../../components/Loading';
 
-// Kald af API
+// API-KALD
 import { getAbout, updateAbout } from '../../helpers/api';
 
 const AdminAbout = () => {
@@ -65,6 +65,7 @@ const AdminAbout = () => {
 
   return (
     <div className="adminAboutWrapper">
+
         <h1>Ret indhold i sektionen "Lidt om os" på forsiden</h1>
 
         {
@@ -84,12 +85,12 @@ const AdminAbout = () => {
             <form onSubmit={handleSubmit}>
 
                 <label>Titel:
-                    <br />
+                        <br />
                     <input type="text" name="title" defaultValue={about.title}></input>
                 </label>
-                <br />
-                <label>Indhold:
                     <br />
+                <label>Indhold:
+                        <br />
                     {/* Tekstarea'ets indhold sendes i update - må ikke slettes! */}
                     <textarea style={{display: "none"}} type="text" name="content" defaultValue={ckeditortext}></textarea>
                 </label>
@@ -106,9 +107,7 @@ const AdminAbout = () => {
                         }}
                     />
                 </div>
-
-                <br />
-
+                    <br />
                 <button type="submit">Gem rettelse(r)</button>
 
             </form>

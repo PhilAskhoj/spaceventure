@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "../../sass/AdminNavbar.scss";
 
-
 const AdminNavbar = () => {
 
   return (
@@ -30,4 +29,4 @@ const AdminNavbar = () => {
   )
 }
 
-export default AdminNavbar
+export default AdminNavbar;

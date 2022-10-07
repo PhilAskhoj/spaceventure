@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import Loading from '../../components/Loading';
-import Fejl from '../../components/Fejl';
 import { Link } from 'react-router-dom';
 import "../../sass/AdminTours.scss";
+
+// COMPONENTS
+import Loading from '../../components/Loading';
+import Fejl from '../../components/Fejl';
 
 // IKONER
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 
-// Kald af API
+// API-KALD
 import { deleteTour, getAllTours } from '../../helpers/api';
 
 const AdminTours = () => {
@@ -84,28 +86,34 @@ const AdminTours = () => {
       }
 
       {
-        tours && <div>
+        tours && 
+        
+          <div>
 
-          {
-            tours.map(t =>
-              <div className="AdminToursContainer" key={t._id}>
-                <h2 className="AdminToursTitle">
-                  Tur: "{t.destination}"
-                </h2>
-                <h3 className="AdminToursTitle">
-                 Med titlen: "{t.title}"
-                </h3>
-                <div className="AdminToursOptions">
-                  <AiOutlineDelete className="AdminToursDelete" onClick={() => handleDelete(t._id, t.title)} title="Slet tour" alt="Symbol for sletning af tour"  />
-                  <Link to={"/admin/admintoursedit/" + t._id}>
-                    <AiOutlineEdit className="AdminToursEdit" title="Rediger tour" alt="Symbol for redigering af tour" />
-                  </Link>
+            {
+              tours.map(t =>
+                <div className="AdminToursContainer" key={t._id}>
+  
+                  <h2 className="AdminToursTitle">
+                    Tur: "{t.destination}"
+                  </h2>
+
+                  <h3 className="AdminToursTitle">
+                    Med titlen: "{t.title}"
+                  </h3>
+
+                  <div className="AdminToursOptions">
+                    <AiOutlineDelete className="AdminToursDelete" onClick={() => handleDelete(t._id, t.title)} title="Slet tour" alt="Symbol for sletning af tour"  />
+                    <Link to={"/admin/admintoursedit/" + t._id}>
+                      <AiOutlineEdit className="AdminToursEdit" title="Rediger tour" alt="Symbol for redigering af tour" />
+                    </Link>
+                  </div>
+  
                 </div>
-              </div>
-            )
-          }
+              )
+            }
 
-        </div>
+          </div>
       }
 
 

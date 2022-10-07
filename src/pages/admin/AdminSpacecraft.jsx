@@ -5,11 +5,11 @@ import "../../sass/AdminSpacecraft.scss";
 import Editor from 'ckeditor5-custom-build';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 
-// Components
+// COMPONENTS
 import Fejl from '../../components/Fejl';
 import Loading from '../../components/Loading';
 
-// Kald af API
+// API-KALD
 import { getSpacecraft, updateSpacecraft } from '../../helpers/api';
 
 const AdminAbout = () => {
@@ -65,6 +65,7 @@ const AdminAbout = () => {
 
   return (
     <div className="adminSpacecraftWrapper">
+
         <h1>Ret indhold på siden "Rumfærgen"</h1>
 
         {
@@ -84,12 +85,12 @@ const AdminAbout = () => {
             <form onSubmit={handleSubmit}>
 
                 <label>Titel:
-                    <br />
+                        <br />
                     <input type="text" name="title" defaultValue={spacecraft.title}></input>
                 </label>
-                <br />
-                <label>Indhold:
                     <br />
+                <label>Indhold:
+                        <br />
                     {/* Tekstarea'ets indhold sendes i update - må ikke slettes! */}
                     <textarea style={{display: "none"}} type="text" name="content" defaultValue={ckeditortext}></textarea>
                 </label>
@@ -106,19 +107,17 @@ const AdminAbout = () => {
                         }}
                     />
                 </div>
-                <br />
+                    <br />
                 <label>Billede:
-                    <br />
+                        <br />
                     (Det  eksisterende billede vil dermed blive erstattet)
-                    <br />
+                        <br />
                     <input type="file" accept="image/x-png,image/jpeg" />
-                    <br />
-                    <br />
+                        <br />
+                        <br />
                     Nuværende billede: <img src={"http://localhost:4444/images/spacecraft/" + spacecraft.image} alt="Nuværende foto" />
                 </label>
-
-                <br />
-
+                    <br />
                 <button type="submit">Gem rettelse(r)</button>
 
             </form>

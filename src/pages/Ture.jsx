@@ -7,7 +7,7 @@ import "../sass/Ture.scss";
 import Fejl from '../components/Fejl';
 import Loading from '../components/Loading';
 
-// API-kald
+// API-KALD
 import { getAllTours } from '../helpers/api';
 import Pagination from '../components/Pagination';
 
@@ -65,7 +65,7 @@ const Ture = () => {
           <div className="alleTureContainer">
 
               {
-                // 
+
                 ture.slice((currentPage * numberPerPage), (currentPage * numberPerPage) + numberPerPage).map( t => /* HER KAN DER INDSÆTTES SLIDE(FX 0,3 FOR DE 3 FØRSTE TOURS). ELLERS KAN DER INDSÆTES REVERSE() FOR AT VENDE BUNDEN I VEJRET - I DETTE TILFÆLDE Å-A I STEDET FOR A-Å. VI KAN OGSÅ KOMBINERER DET TIL EN CHAIN VED AT INDSÆTTE BEGGE, HVOR DET SÅ BLIVER REVERSE().SLICE().MAP. Ydermere kan shuffel (igennem Fisher Yates Moetoden) burges, hvor vi bruger funktionen "myRandom" - her kan slice() eventuelt også bruges i sammenhæng, hvis det skulle være nødvendigt. */
                   <div className="tureKort" key={t._id}>
 
@@ -74,8 +74,10 @@ const Ture = () => {
                     </figure>
 
                     <div className="tureKortTekstContainer">
+
                         <p className="turePris">{t.price}</p>
                         <h4 className="tureTitle" >{t.title}</h4>
+
                         <div>
                           {parse(t.content)} {/* Kommer i forvejen i et p-tag igennem API'et/backenden. Derfor skal det ikke indsættes i et p-tag her, da dette vil være semantisk ukorrekt, da der hermed ville opstå et p-tag inde i et p-tag */}
                         </div>
@@ -87,19 +89,19 @@ const Ture = () => {
                     </div>
 
                   </div>
-                  )
+                )
 
-                }
+              }
 
-                {/* FREM OG TILBAGE KNAPPER TIL PAGINATION */}
-                {/* KNAPPER MED ANTAL SIDER MELLEM TILBAGE OG FREM KNAPPERNE FRA FUNKTION */}
-                <Pagination
-                  setCurrentPage={setCurrentPage}                         // fra state
-                  currentPage={currentPage}                               // Fra state ("den side der vises nu")
-                  numberOfPages={Math.ceil(ture.length / numberPerPage)} // Der beregnes der hvor mange sidelinks/sideknapper, som skal laves
-                />
+              {/* FREM OG TILBAGE KNAPPER TIL PAGINATION */}
+              {/* KNAPPER MED ANTAL SIDER MELLEM TILBAGE OG FREM KNAPPERNE FRA FUNKTION */}
+              <Pagination
+                setCurrentPage={setCurrentPage} // fra state
+                currentPage={currentPage} // Fra state ("den side der vises nu")
+                numberOfPages={Math.ceil(ture.length / numberPerPage)} // Der beregnes der hvor mange sidelinks/sideknapper, som skal laves
+              />
 
-        </div>
+          </div>
 
       }
 

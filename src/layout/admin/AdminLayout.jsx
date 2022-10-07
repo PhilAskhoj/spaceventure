@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
+import { LoginContext } from '../../context/LoginContext';
+
+// COMPONENTS
+import AdminHeader from './AdminHeader';
 import AdminFooter from './AdminFooter';
 import AdminNavbar from './AdminNavbar';
-import { LoginContext } from '../../context/LoginContext';
-import AdminHeader from './AdminHeader';
 
 const AdminLayout = () => {
 
@@ -30,4 +32,4 @@ const AdminLayout = () => {
   )
 }
 
-export default AdminLayout
+export default AdminLayout;

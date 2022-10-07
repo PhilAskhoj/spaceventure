@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import "../sass/Kontakt.scss";
+
+// CONPONENTS
 import Loading from '../components/Loading';
 import Fejl from '../components/Fejl';
 
-// API-kald
+// API-KALD
 import { createContact } from '../helpers/api';
 
 const Kontakt = () => {
