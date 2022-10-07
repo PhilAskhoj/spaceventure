@@ -17,18 +17,6 @@ export const getBannerSliderData = () => {
 
 }
 
-// GET ALL TOURS
-export const getTours = () => {
-    // GET http://localhost:4444/banner
-
-    let response = axiosBase.get("banner")
-    .then(resp => {return resp.data})
-    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
-
-    return response;
-
-}
-
 // GET "LIDT OM OS"
 export const getAbout = () => {
     // GET http://localhost:4444/about
@@ -161,18 +149,6 @@ export const createTour = (newData) => {
 
 }
 
-/* 
-// POST - OPRET NY
-export const createTour = (newData) => {
-    // POST http://localhost:5099/tours/admin , formdata
-
-    let response = axiosBase.post("tours/admin", newData)
-    .then(resp => {return resp.data})
-    .catch(error => {throw new Error("Der er desværre på beklageligvis opstået en fejl.")})
-
-    return response;
-
-} */
 
 // PUT - RET (ud fra ID)
 export const updateTour = (updatedData, ID) => {
